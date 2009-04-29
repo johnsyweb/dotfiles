@@ -1,0 +1,1 @@
+toggle_unit_tests.vba: call delete('/Users/paj/.vim/plugin/toggle_unit_tests.vim')|call delete('/Users/paj/.vim/doc/toggle_unit_tests.txt')
