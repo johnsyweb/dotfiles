@@ -308,7 +308,7 @@ abbreviate adn      and
 """"}}}
 
 """" Colours {{{
-colorscheme primitive
+colorscheme desert
 "TODO: This will go elsewhere:
 highlight default mailQuoted1   ctermfg=DarkRed        guifg=Red
 highlight default mailQuoted2   ctermfg=DarkCyan       guifg=Cyan
