@@ -21,11 +21,15 @@ setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 smarttab expandtab sm
 
 setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except,0#
 
+function! GetIndentationLevel(line_number)
+
+endfunction
+
 function! GetLastClass()
     "My answer to http://groups.google.com/group/vim_use/browse_thread/thread/a7f50c597223e4ef
     let l:retval = "[No class]"
 
-    let l:last_line_declaring_a_class = search('^\s*class', 'bnW')
+    let l:last_line_declaring_a_class = search('^\s*class', 'cbnW')
     let l:last_line_starting_with_a_word_other_than_class = search('^\(\<\)\@=\(class\)\@!', 'bnW')
 
     if l:last_line_starting_with_a_word_other_than_class < l:last_line_declaring_a_class
