@@ -21,25 +21,36 @@ setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 smarttab expandtab sm
 
 setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except,0#
 
-function! GetIndentationLevel(line_number)
-
-endfunction
-
-function! GetLastClass()
+function! GetLastClass(which_line)
     "My answer to http://groups.google.com/group/vim_use/browse_thread/thread/a7f50c597223e4ef
-    let l:retval = "[No class]"
+    let l:retval = "None"
+    let l:class_regex = 'class\s\+\zs\i\+' 
 
-    let l:last_line_declaring_a_class = search('^\s*class', 'cbnW')
-    let l:last_line_starting_with_a_word_other_than_class = search('^\(\<\)\@=\(class\)\@!', 'bnW')
+    let l:this_line = getline(a:which_line)
+    let l:indentation = matchstr(l:this_line, '^\s*')
 
-    if l:last_line_starting_with_a_word_other_than_class < l:last_line_declaring_a_class
-        let l:retval = getline(l:last_line_declaring_a_class)
+    let l:last_class_regex = '^\(' . l:indentation . '\)\@!\s*class'
+    let l:last_line_declaring_a_class = search(l:last_class_regex, 'cbnW')
+    let l:last_class_indentation = matchstr(getline(l:last_line_declaring_a_class), '^\s*')
+
+    let l:last_non_class_regex = '^\(' . l:last_class_indentation . '\)\@=\(class\)\@!\(\<\)\@='
+    let l:last_non_class_block = search(last_non_class_regex, 'cbnW')
+
+    if l:last_non_class_block < l:last_line_declaring_a_class
+        let l:outer_class = ''
+        if strlen(l:last_class_indentation) > 0
+            let l:outer_class = GetLastClass(l:last_line_declaring_a_class)
+            let l:outer_class .= '.'
+        endif
+        let l:retval = l:outer_class
+        let l:retval .= matchstr(getline(l:last_line_declaring_a_class), l:class_regex)
     endif
 
     return l:retval
+
 endfunction
 
-setlocal statusline=[%n]\ %{GetLastClass()}\ %<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
+setlocal statusline=[%n]\ [class\ %{GetLastClass('.')}:]\ %<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 
 " Tip 1546: Automatically add Python paths to Vim path
 if has('python')
