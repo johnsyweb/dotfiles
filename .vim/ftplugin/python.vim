@@ -18,39 +18,68 @@ iabbr <buffer> sat self.assertTrue
 
 " Preferences for spaces, etc...
 setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 smarttab expandtab smartindent
-
 setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except,0#
 
-function! GetLastClass(which_line)
-    "My answer to http://groups.google.com/group/vim_use/browse_thread/thread/a7f50c597223e4ef
-    let l:retval = "None"
+
+function! GetClassNameFromLine(line_number)
     let l:class_regex = 'class\s\+\zs\i\+' 
+    let l:line = getline(a:line_number)
+    return matchstr(l:line, l:class_regex)
+endfunction
 
-    let l:this_line = getline(a:which_line)
-    let l:indentation = matchstr(l:this_line, '^\s*')
 
+function! GetIndentationFromLine(line_number)
+    let l:line = getline(a:line_number)
+    return matchstr(l:line, '^\s*')
+endfunction
+
+function! GetClassDeclarationBeforeLine(line_number)
+    let l:indentation = GetIndentationFromLine(a:line_number)
     let l:last_class_regex = '^\(' . l:indentation . '\)\@!\s*class'
-    let l:last_line_declaring_a_class = search(l:last_class_regex, 'cbnW')
-    let l:last_class_indentation = matchstr(getline(l:last_line_declaring_a_class), '^\s*')
+    return search(l:last_class_regex, 'cbnW')
+endfunction
 
-    let l:last_non_class_regex = '^\(' . l:last_class_indentation . '\)\@=\(class\)\@!\(\<\)\@='
-    let l:last_non_class_block = search(last_non_class_regex, 'cbnW')
 
-    if l:last_non_class_block < l:last_line_declaring_a_class
-        let l:outer_class = ''
-        if strlen(l:last_class_indentation) > 0
-            let l:outer_class = GetLastClass(l:last_line_declaring_a_class)
-            let l:outer_class .= '.'
+function! GetLastBlockBeforeLine(line_number)
+    let l:indentation = GetIndentationFromLine(a:line_number)
+    let l:last_non_class_regex = '^\(' . l:indentation . '\)\@=\(class\)\@!\(\<\)\@='
+    return search(last_non_class_regex, 'cbnW')
+endfunction
+
+function! ShouldLookForOuterClass(line_number_of_class_dec)
+    let l:indentation = GetIndentationFromLine(a:line_number_of_class_dec)
+    return strlen(l:indentation) > 0
+endfunction
+
+
+function! GetLastClass(line_number)
+    let l:retval = ''
+
+    let l:line_number_of_class_dec = GetClassDeclarationBeforeLine(a:line_number)
+    let l:last_non_class_block = GetLastBlockBeforeLine(l:line_number_of_class_dec)
+
+    if l:last_non_class_block < l:line_number_of_class_dec
+        if ShouldLookForOuterClass(l:line_number_of_class_dec)
+            let l:retval = GetLastClass(l:line_number_of_class_dec)
+            let l:retval .= '.'
         endif
-        let l:retval = l:outer_class
-        let l:retval .= matchstr(getline(l:last_line_declaring_a_class), l:class_regex)
+        let l:retval .= GetClassNameFromLine(l:line_number_of_class_dec)
     endif
 
     return l:retval
-
 endfunction
 
-setlocal statusline=[%n]\ [class\ %{GetLastClass('.')}:]\ %<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
+function! GetLastClassWrapper()
+"My answer to http://groups.google.com/group/vim_use/browse_thread/thread/a7f50c597223e4ef
+    let l:retval = 'No class:'
+    let l:last_class = GetLastClass('.')
+    if strlen(l:last_class)
+        let l:retval = 'class ' . l:last_class . ':'
+    endif
+    return l:retval
+endfunction
+
+setlocal statusline=[%n]\ %{GetLastClassWrapper()}\ %<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 
 " Tip 1546: Automatically add Python paths to Vim path
 if has('python')
