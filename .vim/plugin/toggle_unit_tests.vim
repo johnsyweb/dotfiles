@@ -1,5 +1,5 @@
 " Vim global plug-in for toggling between source and unit test files.
-" Last Change:	2009 January 01
+" Last Change:	Wed  5 Aug 2009 09:36:13 EST
 " Maintainer:	Pete Johns <paj-vim@johnsy.com>
 " License:	    This file is placed in the public domain.
 " Notes:        This plugin assumes source and unit test files are in the same
