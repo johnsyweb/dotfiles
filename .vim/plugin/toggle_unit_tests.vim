@@ -70,11 +70,13 @@ endfunction
 
 
 function! s:CurrentFileIsTest()
+    let l:unit_test_regex = '^'.g:unit_test_prefix
     return expand('%:t') =~ l:unit_test_regex 
 endfunction
 
 
 function! s:GetSutFromTest()
+    let l:unit_test_regex = '^'.g:unit_test_prefix
     return substitute(expand('%:t'), l:unit_test_regex, '', '')
 endfunction
 
@@ -85,7 +87,6 @@ endfunction
 
 
 function! s:DetermineAlternativeFilename()
-    let l:unit_test_regex = '^'.g:unit_test_prefix
     if s:CurrentFileIsCppHeader()
         let l:alternate = s:GetCppSourceForHeader()
     elseif s:CurrentFileIsTest()
