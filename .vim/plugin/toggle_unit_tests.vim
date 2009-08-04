@@ -20,7 +20,7 @@ endfunction
 
 
 if v:version < 700
-    s:EchoWarning('Toggle Unit Tests requires at least VIM 7.0')
+    call s:EchoWarning('Toggle Unit Tests requires at least VIM 7.0')
     finish
 endif
 
@@ -90,9 +90,9 @@ function! s:DetermineAlternativeFilename()
     if s:CurrentFileIsCppHeader()
         let l:alternate = s:GetCppSourceForHeader()
     elseif s:CurrentFileIsTest()
-        let l:alternate = GetSutFromTest()
+        let l:alternate = s:GetSutFromTest()
     else
-        let l:alternate = GetTestFromSut()
+        let l:alternate = s:GetTestFromSut()
     endif
     return l:alternate
 endfunction
@@ -107,15 +107,15 @@ endfunction
 
 function! s:Toggle()
     if s:NoFileOpen()
-        s:EchoWarning('No file open.')
+        call s:EchoWarning('No file open.')
         return
     endif
 
-    s:WriteFileIfNecessary()
+    call s:WriteFileIfNecessary()
 
     let l:alternate = s:DetermineAlternativeFilename()
 
-    s:OpenFileInCurrentDirectory(l:alternate)
+    call s:OpenFileInCurrentDirectory(l:alternate)
 endfunction
 
 
