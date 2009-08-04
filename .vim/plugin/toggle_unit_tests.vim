@@ -47,13 +47,8 @@ function! s:NoFileOpen()
 endfunction
 
 
-function! s:WriteFileIfNecessary()
-    update
-endfunction
-
-
 function! s:CurrentFileIsCppHeader()
-   return expand('%:e') == 'h' 
+    return expand('%:e') == 'h' 
 endfunction
 
 
@@ -98,10 +93,14 @@ function! s:DetermineAlternativeFilename()
 endfunction
 
 
-function! s:OpenFileInCurrentDirectory(filename)
+function! s:OpenFile(filename)
     let l:full_path = expand('%:p:h') . '/' . a:filename
-    let l:command = 'edit' . l:full_path
-    execute l:command
+    let l:already_opened_buffer = bufnr(l:full_path) != -1
+    if l:already_opened_buffer 
+        execute 'buffer! ' . l:full_path
+    else
+        execute 'edit! ' . l:full_path
+    endif
 endfunction
 
 
@@ -111,11 +110,9 @@ function! s:Toggle()
         return
     endif
 
-    call s:WriteFileIfNecessary()
-
     let l:alternate = s:DetermineAlternativeFilename()
 
-    call s:OpenFileInCurrentDirectory(l:alternate)
+    call s:OpenFile(l:alternate)
 endfunction
 
 
