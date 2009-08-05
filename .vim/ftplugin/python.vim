@@ -16,8 +16,9 @@ iabbr <buffer> san self.assertNotEquals
 iabbr <buffer> sar self.assertRaises
 iabbr <buffer> sat self.assertTrue
 
-" Preferences for spaces, etc...
-setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 smarttab expandtab smartindent
+" In Python, indentation is four spaces. 
+" A tab character is always eight spaces.
+setlocal tabstop=8 softtabstop=4 shiftwidth=4 textwidth=80 smarttab expandtab smartindent
 setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except,0#
 
 
