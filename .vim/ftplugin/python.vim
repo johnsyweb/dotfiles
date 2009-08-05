@@ -16,12 +16,71 @@ iabbr <buffer> san self.assertNotEquals
 iabbr <buffer> sar self.assertRaises
 iabbr <buffer> sat self.assertTrue
 
-" Preferences for spaces, etc...
 " In Python, indentation is four spaces. 
 " A tab character is always eight spaces.
 setlocal tabstop=8 softtabstop=4 shiftwidth=4 textwidth=80 smarttab expandtab smartindent
-
 setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except,0#
+
+
+function! GetClassNameFromLine(line_number)
+    let l:class_regex = 'class\s\+\zs\i\+' 
+    let l:line = getline(a:line_number)
+    return matchstr(l:line, l:class_regex)
+endfunction
+
+
+function! GetIndentationFromLine(line_number)
+    let l:line = getline(a:line_number)
+    return matchstr(l:line, '^\s*')
+endfunction
+
+function! GetClassDeclarationBeforeLine(line_number)
+    let l:indentation = GetIndentationFromLine(a:line_number)
+    let l:last_class_regex = '^\(' . l:indentation . '\)\@!\s*class'
+    return search(l:last_class_regex, 'cbnW')
+endfunction
+
+
+function! GetLastBlockBeforeLine(line_number)
+    let l:indentation = GetIndentationFromLine(a:line_number)
+    let l:last_non_class_regex = '^\(' . l:indentation . '\)\@=\(class\)\@!\(\<\)\@='
+    return search(last_non_class_regex, 'cbnW')
+endfunction
+
+function! ShouldLookForOuterClass(line_number_of_class_dec)
+    let l:indentation = GetIndentationFromLine(a:line_number_of_class_dec)
+    return strlen(l:indentation) > 0
+endfunction
+
+
+function! GetLastClass(line_number)
+    let l:retval = ''
+
+    let l:line_number_of_class_dec = GetClassDeclarationBeforeLine(a:line_number)
+    let l:last_non_class_block = GetLastBlockBeforeLine(l:line_number_of_class_dec)
+
+    if l:last_non_class_block < l:line_number_of_class_dec
+        if ShouldLookForOuterClass(l:line_number_of_class_dec)
+            let l:retval = GetLastClass(l:line_number_of_class_dec)
+            let l:retval .= '.'
+        endif
+        let l:retval .= GetClassNameFromLine(l:line_number_of_class_dec)
+    endif
+
+    return l:retval
+endfunction
+
+function! GetLastClassWrapper()
+"My answer to http://groups.google.com/group/vim_use/browse_thread/thread/a7f50c597223e4ef
+    let l:retval = 'No class:'
+    let l:last_class = GetLastClass('.')
+    if strlen(l:last_class)
+        let l:retval = 'class ' . l:last_class . ':'
+    endif
+    return l:retval
+endfunction
+
+setlocal statusline=[%n]\ %{GetLastClassWrapper()}\ %<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 
 " Tip 1546: Automatically add Python paths to Vim path
 if has('python')
