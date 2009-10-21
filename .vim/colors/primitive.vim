@@ -28,13 +28,13 @@ let g:colors_name="primitive"
 highlight Bold                              term=Bold                               gui=Bold
 highlight Boolean       ctermfg=DarkBlue                        guifg=DarkBlue
 highlight Character     ctermfg=DarkCyan                        guifg=DarkCyan
-highlight Comment       ctermfg=DarkGrey                        guifg=DarkGrey      gui=Bold,Italic
+highlight Comment       ctermfg=DarkGrey                        guifg=DarkGrey      gui=Bold
 highlight Constant      ctermfg=DarkBlue                        guifg=DarkBlue
-highlight Cursor        ctermfg=DarkYellow  ctermbg=DarkBlue    guifg=DarkYellow    guibg=DarkBlue
+highlight Cursor        ctermfg=LightRed    ctermbg=DarkBlue    guifg=LightRed      guibg=DarkBlue
 highlight DiffAdd                           ctermbg=DarkGreen                       guibg=LightGreen   term=None
 highlight DiffChange                        ctermbg=DarkYellow                      guibg=LightYellow
 highlight DiffDelete                        ctermbg=DarkRed                         guibg=LightRed
-highlight DiffText      ctermfg=DarkYellow  ctermbg=DarkBlue    guifg=Yellow        guibg=LightBlue
+highlight DiffText      ctermfg=LightRed    ctermbg=DarkBlue    guifg=Yellow        guibg=LightBlue
 highlight Directory     ctermfg=DarkCyan                        guifg=DarkCyan
 highlight Error         ctermfg=White       ctermbg=Red         guifg=White         guibg=Red           term=Bold  gui=Bold
 highlight FoldColumn    ctermfg=DarkGreen   ctermbg=White       guifg=DarkGreen     guibg=White         term=standout
@@ -45,26 +45,27 @@ highlight Ignore        ctermfg=Grey                            guifg=DarkGrey
 highlight IncSearch                         term=Bold,Reverse                       gui=Bold,Reverse
 highlight Italic                            term=Italic                             gui=Italic
 highlight LineNr        ctermfg=Grey        ctermbg=NONE        guifg=DarkGrey      guibg=LightGrey
-highlight ModeMsg       ctermfg=DarkYellow                      guifg=DarkYellow
+highlight ModeMsg       ctermfg=Cyan                            guifg=LightCyan
 highlight MoreMsg       ctermfg=DarkGreen                       guifg=DarkGreen
 highlight NonText       ctermfg=DarkBlue    term=Bold           guifg=DarkBlue      gui=Bold
 highlight Normal        ctermfg=DarkBlue                        guifg=DarkBlue
 highlight Number        ctermfg=DarkBlue                        guifg=DarkBlue
-highlight Operator                          gui=Bold                                gui=Bold
+highlight Operator                          term=Bold                               gui=Bold
 highlight PreProc       ctermfg=Green                           guifg=DarkGreen
 highlight Question      ctermfg=DarkGreen                       guifg=DarkGreen
 highlight Search        ctermfg=DarkCyan    ctermbg=DarkBlue    guifg=DarkCyan      guibg=DarkBlue
-highlight Smiley        ctermfg=DarkYellow  term=Bold           guifg=DarkYellow    gui=Bold
+highlight Smiley        ctermfg=LightRed    term=Bold           guifg=LightRed      gui=Bold
 highlight Special       ctermfg=DarkMagenta                     guifg=DarkMagenta
 highlight SpecialKey    ctermfg=DarkGreen                       guifg=DarkGreen
 if (v:version >= 700)
-highlight SpellCap      ctermfg=Green   ctermbg=None term=Bold  guisp=Green         gui=undercurl 
-highlight SpellLocal    ctermfg=Cyan    ctermbg=None term=Bold  guisp=Cyan          gui=undercurl
-highlight SpellRare     ctermfg=Magenta ctermbg=None term=Bold  guisp=Magenta       gui=undercurl
-highlight SpellBad      ctermfg=Red     ctermbg=None term=Bold  guisp=Red           gui=undercurl
+    highlight PMenu         ctermfg=DarkBlue    ctermbg=Cyan        guifg=DarkBlue      guibg=Cyan
+    highlight SpellCap      ctermfg=Green   ctermbg=None term=Bold  guisp=Green         gui=undercurl 
+    highlight SpellLocal    ctermfg=Cyan    ctermbg=None term=Bold  guisp=Cyan          gui=undercurl
+    highlight SpellRare     ctermfg=Magenta ctermbg=None term=Bold  guisp=Magenta       gui=undercurl
+    highlight SpellBad      ctermfg=Red     ctermbg=None term=Bold  guisp=Red           gui=undercurl
 endif " version 7+
-highlight Statement     ctermfg=DarkYellow  gui=Bold            guifg=DarkYellow    gui=Bold
-highlight StatusLine    ctermfg=DarkBlue    ctermbg=DarkYellow  guifg=DarkBlue      guibg=DarkYellow
+highlight Statement     ctermfg=Black       term=bold           guifg=Black         gui=Bold
+highlight StatusLine    ctermfg=DarkBlue    ctermbg=Cyan        guifg=DarkBlue      guibg=Cyan
 highlight StatusLineNC  ctermfg=DarkBlue    ctermbg=White       guifg=DarkBlue      guibg=White     
 highlight String        ctermfg=DarkMagenta                     guifg=DarkMagenta
 highlight Title         ctermfg=DarkMagenta                     guifg=DarkMagenta
@@ -85,4 +86,6 @@ highlight link mailEmail     Identifier
 highlight link mailURL       Underlined
 highlight link mailSubject   SpecialKey
 highlight link mailSignature Type
+
+
 " }}}
