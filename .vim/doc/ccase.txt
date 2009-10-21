@@ -1,5 +1,5 @@
-*ccase.txt*                  For Vim version 6.0 and up.
-             LAST MODIFICATION: "Thu, 03 Apr 2003 14:41:22 (dp)"
+*ccase.txt*	For Vim version 6.0 and up                            v1.38
+             LAST MODIFICATION: "Fri, 03 Sep 2004 16:25:08 (dp)"
 
 
 		  VIM REFERENCE MANUAL    by Douglas Potts
@@ -10,7 +10,7 @@ Author:  Douglas L. Potts <pottsdl@NnetOzerSo.nPeAtM>
 
 Contents:
   |ccase-overview|      1. Overview
-  |ccase-commands|      2. Commands                                                   
+  |ccase-commands|      2. Commands
   |ccase-maps|          3. Normal Mode maps
   |ccase-menus|         4. Menus
   |ccase-options|       5. Options
@@ -18,7 +18,7 @@ Contents:
 
 ==============================================================================
 
-1. Overview					*ccase-overview* *ccase-plugin*
+1. Overview			       *ccase-overview* *ccase-plugin* *ccase*
 
 Similar to the various RCS and CVS menu plugins available on
 http://vim.sourceforge.net, this plugin deals with version control.
@@ -31,10 +31,9 @@ There are three parts to this plugin:
   2. Normal Mode mappings       (see also |:nmap|)
   3. Menus for commands
 
-The functionality mentioned here is a plugin, see |add-plugin|.
-This plugin is only available if 'compatible' is not set.
-You can avoid loading this plugin by setting the "loaded_ccase" variable
-in your |vimrc| file: >
+The functionality mentioned here is a plugin, see |add-plugin|.  This plugin
+is only available if 'compatible' is not set.  You can avoid loading this
+plugin by setting the "loaded_ccase" variable in your |vimrc| file: >
 	:let loaded_ccase = 1
 
 {Vi does not have any of this}
@@ -76,7 +75,7 @@ List the checkouts for the current user, for this view, in the current working
 directory, and all of it's subdirectories.  This redirects the output from the
 "cleartool lsco" command to a results file, and splits the window, and opens
 the results file in that new window.  The results will be in a special,
-non-modifible buffer named '[checkouts_recurse]'.  While this buffer is open,
+non-modifiable buffer named '[checkouts_recurse]'.  While this buffer is open,
 the |BufEnter| |autocmd| will cause the window to update for any check in/out
 activity that has occurred (within its scope), since it was opened.
 This autocmd update mechanism will be a part of the ccase |augroup|.
@@ -85,7 +84,7 @@ This autocmd update mechanism will be a part of the ccase |augroup|.
 List the checkouts for the current user, for this view, in any VOB.  This
 redirects the output from the "cleartool lsco" command to a results file, and
 splits the window, and opens the results file in that new window.  The results
-will be in a special, non-modifible buffer named '[checkouts_allvobs]'.  While
+will be in a special, non-modifiable buffer named '[checkouts_allvobs]'.  While
 this buffer is open, the |BufEnter| |autocmd| will cause the window to update
 for any check in/out activity that has occurred (within its scope), since it
 was opened.
@@ -93,7 +92,7 @@ This autocmd update mechanism will be a part of the ccase |augroup|.
 
 
 
-Uncommmon Commands:~
+Uncommon Commands:~
                                                                      *:cthist*
 List the version history for the current file.  This redirects the output from
 the "cleartool lshist" command to a results file, and splits the window, and
@@ -107,15 +106,48 @@ window, and opens the results file in that new window.
                                                                       *:ctpwv*
 Echo the current working view to the status line.
 
+                                                                      *:ctcmt*
+Show comment for the current file.
+
+                                                                      *:ctann*
+This command lists the contents of the current file, annotating each line to
+indicate which developer added that line, and in which version the line was
+added. A summary of each version of the file will also be included.
+
                                                                      *:ctxlsv*
 Spawn off the ClearCase(R) xlsvtree (graphical version tree viewer) for the
 current file.
+
                                                                      *:ctdiff*
 Spawn off the clearcase graphical diff tool to display differences between the
 current file and its immediate predecessor.
 
                                                                      *:ctpdif*
-Perform a |:diffsplit| on the predecessor version of the current file.
+Compare the current file to its predecessor version using |:diffsplit|.
+Depending on the value of |g:ccaseDiffVertSplit|, the split will be vertical
+or horizontal.
+
+                                                                     *:ct0dif*
+Compare the current file to its first version on the same branch using
+|:diffsplit|. Depending on the value of |g:ccaseDiffVertSplit|, the split will
+be vertical or horizontal.
+
+                                                                     *:ctldif*
+Compare the current file to its "/main/LATEST" version using |:diffsplit|.
+Depending on the value of |g:ccaseDiffVertSplit|, the split will be vertical
+or horizontal.
+
+                                                                     *:ctmdif*
+Compare the current file to its closest common ancestor version with
+"/main/LATEST" using |:diffsplit|. This should contain changes made on the
+current branch that have not been merged to the main branch.
+
+This command is used to support the concurrent development model where
+developers made changes on their private branches. Those changes will been
+merged back into the main branch after unit testing. This command will show
+latest changes you made on your private branch that has not been merged back
+into the main branch.
+
 Depending on the value of |g:ccaseDiffVertSplit|, the split will be vertical
 or horizontal.
 
@@ -189,9 +221,21 @@ cursor.  See |:ctxlsv| for the operational details of what the |ccase-plugin|
 does for a version tree listing of version history.
 
                                                               *<Leader>ctpdif*
-Performs a diff with previous version operation on the filename under the
+Performs a "diff with previous version" operation on the filename under the
 cursor.  See |:ctpdif| for the operational details of what the |ccase-plugin|
 does for diff'ing against the file's predecessor version.
+
+                                                              *<Leader>ct0dif*
+Performs a "diff with first version on the same branch" operation on the
+filename under the cursor.  See |:ct0dif| for the operational detail.
+
+                                                              *<Leader>ctldif*
+Performs a "diff with /main/LATEST" operation on the filename under the
+cursor.  See |:ctldif| for the operational detail.
+
+                                                              *<Leader>ctmdif*
+Performs a "show changes need merge" operation on the filename under the
+cursor.  See |:ctmdif| for the operational detail.
 
                                                               *<Leader>ctqdif*
 Performs a diff with queried operation on the filename under the cursor.  See
@@ -297,12 +341,33 @@ user is not prompted to check the directory back in.
 Integer boolean		(default:  1=When making an new activity, set the
                                    current activity to be the newly made one.)
 
-
 When using the make activity function, the default ClearCase behavior (which
 is also the default for ccase.vim) is to change the current working activity
 to the newly made activity.  This option determines whether or not you want to
 automatically switch to the newly created activity, or that you have to do the
 switch manually.
+
+                                                               *g:ccaseJustMe*
+Integer boolean		(default:  1=List checkout for the current user only.)
+
+When listing checkout elements, you can use this option to control whether
+list checkouts for the current user only (g:ccaseJustMe = 1), or list
+checkouts for all users (g:ccaseJustMe = 0).
+
+                                                   *g:ccaseAutoRemoveCheckout*
+Integer boolean		(default:  0=Prompt the user whether to remove the
+                                   checkout file or not.)
+
+When unchecking out a file, the default ClearCase behavior is to ask user
+whether removing the checked out file or not. This option determines whether
+you want to remove the checked out automatically or not. If it is set to 1,
+the checked out file will be automatically removed.
+
+                                                            *g:ccaseEnableUCM*
+Integer boolean		(default:  1=Enable UCM support.)
+
+Set this to 0 if your clearcase installation has no UCM support. This will
+take out a few UCM related menu items to make the menu shorter.
 
 ==============================================================================
 
@@ -344,4 +409,5 @@ Guillaume Lafage        - for patches allowing sym-linked and Windows shortcut
 And many others...
 
 ==============================================================================
+
  vim:tw=78:ts=8:ft=help:norl:
