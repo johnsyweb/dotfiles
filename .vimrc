@@ -1,9 +1,7 @@
 "        File: .vimrc [Vim resource script]
 " Description: Settings, commands and mappings for Vim
 "  Maintainer: Pete Johns <paj-vim@johnsy.com>
-"         URL: http://johnsy.com/dotfiles/.vimrc
-"     Version: 1.0
-" Last Change: 2006-03-18
+"         URL: http://github.com/johnsyweb/dotfiles/blob/master/.vimrc
 
 """" I'm having some terminal problems under Solaris. 
 """" These mappings help:
