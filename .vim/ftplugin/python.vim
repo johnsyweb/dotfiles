@@ -1,12 +1,24 @@
 " A Vim filetype plugin to set up PyUnit as the 'compiler' for python files.
 
-" This sets up the errorformat...
-compiler pyunit
+function! UsePyUnit()
+    " This sets up the errorformat...
+    compiler pyunit
 
-" Set the 'makeprg', this allows you to call :make on any .py file and run all
-" of the unit tests in the current working directory
-" Ensure you have this file...
-setlocal makeprg=${HOME}/bin/alltests.py
+    " Set the 'makeprg', this allows you to call :make on any .py file and run all
+    " of the unit tests in the current working directory
+    " Ensure you have this file...
+    setlocal makeprg=${HOME}/bin/alltests.py 
+    set makeprg?
+endfunction
+nnoremap <leader>pu :call UsePyUnit()<CR>
+
+function! UsePyLint()
+    setlocal efm=%f:%l:\ [%t]%m,%f:%l:%m
+    setlocal makeprg=pylint\ --output-format=parseable\ --reports=n\ % 
+    set makeprg?
+endfunction
+nnoremap <leader>pl :call UsePyLint()<CR>
+
 
 " Some useful abbreviations when writing unit tests in Python...
 iabbr <buffer> sa_ self.assert_
