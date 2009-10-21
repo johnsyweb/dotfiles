@@ -350,7 +350,7 @@ nnoremap    <F6> <Esc>i<CR><Esc>:ri <CR>
 
 "   [F7]    Toggle Vim v7.0 Spell-Checking {{{
 if v:version >= 700
-    set spelllang=en_au spell
+    set spelllang=en_au nospell
     nnoremap <F7> :<C-U>set spell! spell?<CR>
 endif
 """" }}}
