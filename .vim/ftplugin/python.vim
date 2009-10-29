@@ -19,6 +19,9 @@ function! UsePyLint()
 endfunction
 nnoremap <leader>pl :call UsePyLint()<CR>
 
+" Use PyUnit by Default.
+call UsePyUnit()
+
 
 " Some useful abbreviations when writing unit tests in Python...
 iabbr <buffer> sa_ self.assert_
