@@ -48,7 +48,7 @@ set   backspace=indent,eol,start
 set   browsedir=buffer
 set   cmdheight=2
 set nocindent
-set   cinoptions=>s,e0,n0,f0,{0,}0,^0,:s,=s,ps,ts,+s,(2s,)20,*30,g0
+set   cinoptions=>s,e0,n0,f0,{0,}0,^0,:s,=s,ps,t0,+s,(0,)20,*30,g0,is
 set   cinwords=
 set nocp
 set   dictionary=/usr/share/dict/words
