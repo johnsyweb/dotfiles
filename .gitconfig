@@ -1,0 +1,13 @@
+[user]
+    email = paj-github@johnsy.com
+    name = Pete Johns
+[alias]
+    st = status
+    co = checkout
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[core]
+	excludesfile = /Users/paj/dotfiles/git-global-ignore
+
