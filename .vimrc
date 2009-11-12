@@ -46,10 +46,11 @@ set   autowrite
 set   background=dark
 set   backspace=indent,eol,start
 set   browsedir=buffer
-set   cmdheight=2
 set nocindent
 set   cinoptions=>s,e0,n0,f0,{0,}0,^0,:s,=s,ps,t0,+s,(0,)20,*30,g0,is
 set   cinwords=
+set   clipboard=exclude:.*
+set   cmdheight=2
 set nocp
 set   dictionary=/usr/share/dict/words
 set   diffopt+=iwhite
