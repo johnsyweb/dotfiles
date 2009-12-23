@@ -1,0 +1,17 @@
+# Customize this file to suit your needs
+source /usr/local/standard.cshrc
+source /home/Glue/dev/etc/env/GLUEITG_ENV
+source /home/Glue/dev/etc/env/GLUEGEN_ENV
+source /home/Glue/dev/etc/env/COMMON_ENV
+
+alias ct /usr/atria/bin/cleartool
+
+if ( $?tcsh ) then
+    alias prompt 'set prompt = "%{\033[0m%}%n@${SHORTHOST}(${ENV_MODE}) %c3% "'
+endif
+
+set savehist=200
+bindkey ^r i-search-back
+bindkey ^w backward-delete-word
+
+source ~/.cshrc-alias
