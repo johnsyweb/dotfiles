@@ -28,5 +28,3 @@ setenv MANPATH "${MANPATH}:${local}/man:${local}/share/man"
 setenv GIT_BRANCH_CMD "sh -c 'git branch --no-color 2> /dev/null' | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'"
 alias prompt 'set prompt = "%{\033[0m%}%n@${SHORTHOST}(${ENV_MODE}) `$GIT_BRANCH_CMD` %c3% "'
 prompt
-
-source .cshrc-sanity
