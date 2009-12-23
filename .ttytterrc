@@ -1,0 +1,11 @@
+ansi=1
+newline=1
+readline= @thribble @acidtestjohn @arjbarker @covpinky @epronk @intruth @jodeeker @johnsyweb @krisajenkins @nutzieone @oliralph @petecooper @the_drew @timglenton
+slowpost=10
+timestamp=%A %H%M
+track= #AgileAustralia #agileaus #AgileOz09 #Bassline @johnsyweb #DeepPurple #DoctorWho #IronMaiden #TDD 
+ttytteristas=1
+urlopen=w3m -dump %U | more
+user=johnsyweb
+vcheck=1
+verbose=0
