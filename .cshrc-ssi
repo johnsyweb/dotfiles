@@ -15,3 +15,45 @@ bindkey ^r i-search-back
 bindkey ^w backward-delete-word
 
 source ~/.cshrc-alias
+
+set mrchome='~mcurtis'
+
+#Vim, screen, etc., work better using this term info. 
+setenv TERMINFO ${mrchome}/.terminfo
+
+# Git SCM
+switch (`uname -p`)
+case "i386":
+    set local=${mrchome}/local-x86
+    breaksw
+default:
+    set local=${mrchome}/local-`uname -p`
+    breaksw
+endsw
+setenv LD_LIBRARY_PATH ${local}/lib:${LD_LIBRARY_PATH}
+setenv PATH ${mrchome}/bin:${local}/bin:${PATH}
+setenv GIT_PAGER "less -RF -- "
+setenv INFOPATHS "${local}/info:${local}/share/info"
+# add git branch to prompt (only switches when prompt alias is rerun, e.g. by cd)
+setenv GIT_BRANCH_CMD "sh -c 'git branch --no-color 2> /dev/null' | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'"
+alias prompt 'set prompt = "%{\033[0m%}%n@${SHORTHOST}(${ENV_MODE}) `$GIT_BRANCH_CMD` %c3% "'
+prompt
+
+#dmake
+setenv CONFIG_PREFIX ${local}
+setenv NCPUS `kstat -p unix:0:system_misc:ncpus | cut -f 2`
+setenv DMAKE_MAX_JOBS ${NCPUS}
+setenv DMAKE_MODE parallel
+setenv SUN_MAKE_COMPAT_MODE SUN
+
+
+setenv PAGER less
+setenv EDITOR "vim -X"
+setenv LESS "FRSX"
+setenv VISUAL "${EDITOR}"
+
+setenv LD_LIBRARY_PATH /home/local/${ARCH_BASE}/lib:${LD_LIBRARY_PATH}
+setenv PATH /home/local/${ARCH_BASE}/bin:${PATH}
+setenv PATH /local/app/gnu/grep/current/bin:${PATH}
+setenv PATH /local/app/screen/current/bin:${PATH}
+
