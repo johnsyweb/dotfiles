@@ -2,12 +2,17 @@
     email = paj-github@johnsy.com
     name = Pete Johns
 [alias]
-    st = status
+    br = branch
+    ci = commit
     co = checkout
+    df = diff
+    lg = log -p
+    st = status
 [color]
     diff = auto
     status = auto
     branch = auto
+    ui = auto
 [core]
-	excludesfile = /Users/paj/dotfiles/git-global-ignore
-
+    excludesfile = /Users/paj/dotfiles/git-global-ignore
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
