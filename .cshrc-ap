@@ -1,0 +1,27 @@
+#=== GATE .cshrc file === 
+if ( -f /home/gate/etc/env/COMMON_ENV ) then
+    source /home/gate/etc/env/standard.cshrc
+    source /home/gate/etc/env/COMMON_ENV
+    gateenv
+else
+    exit
+endif 
+
+set savehist=200
+bindkey ^r i-search-back
+bindkey ^w backward-delete-word
+source ~/.cshrc-alias
+
+# Matt's useful stuff...
+setenv PATH /home/mcurtis/old-gate-home/gateDEV/bin:${PATH}
+setenv PATH /home/mcurtis/old-gate-home/gateDEV/bin/lib:${PATH}
+
+#Our GATE Scripts
+setenv PYTHONPATH .
+setenv PYTHONPATH /projects/APGateCommon/bin:${PYTHONPATH}
+setenv PYTHONPATH /projects/pychopper/bin:${PYTHONPATH}
+setenv PYTHONPATH /projects/GateDriverAdd/bin:${PYTHONPATH}
+setenv PATH /projects/GateDriverAdd/bin:${PATH}
+
+
+
