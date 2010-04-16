@@ -4,6 +4,6 @@ set save_path=${PATH}
 set save_ld_library_path=${LD_LIBRARY_PATH}
 source /usr/local/standard.login
 setenv PATH ${save_path}:${PATH}
-setenv LD_LIBRARY_PATH ${save_ld_library_path}
+setenv LD_LIBRARY_PATH ${save_ld_library_path}:${LD_LIBRARY_PATH}
 
 

@@ -1,10 +1,17 @@
-# Customize this file to suit your needs
-source /usr/local/standard.cshrc
-source /home/Glue/dev/etc/env/GLUEITG_ENV
-source /home/Glue/dev/etc/env/GLUEGEN_ENV
-source /home/Glue/dev/etc/env/COMMON_ENV
+# Startup for tcsh at ${EMPLOYER_OF_PAJ}
+if ( -f /home/gate/etc/env/COMMON_ENV ) then
+    source /usr/local/standard.cshrc
+    source /home/Glue/dev/etc/env/GLUEITG_ENV
+    source /home/Glue/dev/etc/env/GLUEGEN_ENV
+    source /home/Glue/dev/etc/env/COMMON_ENV
+    gateenv
+else
+    exit
+endif
 
-alias ct /usr/atria/bin/cleartool
+if ( -e /usr/atria/bin/cleartool ) then
+    alias ct /usr/atria/bin/cleartool
+endif
 
 if ( $?tcsh ) then
     alias prompt 'set prompt = "%{\033[0m%}%n@${SHORTHOST}(${ENV_MODE}) %c3% "'
@@ -14,7 +21,9 @@ set savehist=200
 bindkey ^r i-search-back
 bindkey ^w backward-delete-word
 
-source ~/.cshrc-alias
+if ( -e ~/.cshrc-alias ) then
+    source ~/.cshrc-alias
+endif
 
 set mrchome='~mcurtis'
 
@@ -56,4 +65,17 @@ setenv LD_LIBRARY_PATH /home/local/${ARCH_BASE}/lib:${LD_LIBRARY_PATH}
 setenv PATH /home/local/${ARCH_BASE}/bin:${PATH}
 setenv PATH /local/app/gnu/grep/current/bin:${PATH}
 setenv PATH /local/app/screen/current/bin:${PATH}
+
+setenv PATH ${HOME}/bin:${PATH}
+setenv PATH ~mcurtis/bin:~mcurtis/local/bin:${PATH}
+setenv PATH ~mcurtis/old-gate-home/gateDEV/bin:${PATH}
+setenv PATH ~mcurtis/old-gate-home/gateDEV/bin/lib:${PATH}
+setenv LD_LIBRARY_PATH ~mcurtis/local/lib:${LD_LIBRARY_PATH}
+
+#Our scripts
+setenv PYTHONPATH .
+setenv PYTHONPATH /projects/APGateCommon/bin:${PYTHONPATH}
+setenv PYTHONPATH /projects/pychopper/bin:${PYTHONPATH}
+setenv PYTHONPATH /projects/GateDriverAdd/bin:${PYTHONPATH}
+setenv PATH /projects/GateDriverAdd/bin:${PATH}
 
