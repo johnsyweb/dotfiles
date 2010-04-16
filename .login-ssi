@@ -2,7 +2,9 @@
 ### Customize this to suit your needs
 set save_path=${PATH}
 set save_ld_library_path=${LD_LIBRARY_PATH}
-source /usr/local/standard.login
+if ( -e /usr/local/standard.login ) then
+    source /usr/local/standard.login
+endif
 setenv PATH ${save_path}:${PATH}
 setenv LD_LIBRARY_PATH ${save_ld_library_path}:${LD_LIBRARY_PATH}
 
