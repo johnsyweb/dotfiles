@@ -8,6 +8,7 @@
     df = diff
     lg = log -p
     st = status
+    wc = whatchanged --abbrev-commit
 [color]
     ui = auto
 [core]
