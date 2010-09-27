@@ -12,11 +12,18 @@ bindkey ^r i-search-back
 bindkey ^w backward-delete-word
 source ~/.cshrc-alias
 
+# Oddly missing on gateDEV-p11
+setenv PATH /bin:${PATH}
+setenv PATH /sbin:${PATH}
+setenv PATH /usr/local/bin:${PATH}
+setenv PATH /usr/sbin:${PATH}
+
 # Matt's useful stuff...
 setenv PATH /home/mcurtis/old-gate-home/gateDEV/bin:${PATH}
 setenv PATH /home/mcurtis/old-gate-home/gateDEV/bin/lib:${PATH}
 
 #Our GATE Scripts
+setenv PATH /opt/python2.5/bin:${PATH}
 setenv PYTHONPATH .
 setenv PYTHONPATH /projects/APGateCommon/bin:${PYTHONPATH}
 setenv PYTHONPATH /projects/pychopper/bin:${PYTHONPATH}
