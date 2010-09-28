@@ -1,9 +1,10 @@
 ansi=1
+colourme=BLUE
 newline=1
-readline= @thribble @acidtestjohn @arjbarker @covpinky @epronk @intruth @jodeeker @johnsyweb @krisajenkins @nutzieone @oliralph @petecooper @the_drew @timglenton
+readline= @thribble @acidtestjohn @arjbarker @covpinky @epronk @intruth @glenn_hughes @jodeeker @johnsyweb @krisajenkins @_mrc @nutzieone @oliralph @petecooper @the_drew @timglenton
 slowpost=10
-timestamp=%A %H%M
-track= #AgileAustralia #agileaus #AgileOz09 #Bassline @johnsyweb #DeepPurple #DoctorWho #IronMaiden #TDD 
+timestamp=1
+track= #AgileAustralia #AgileOz09 #Bassline #DeepPurple #DoctorWho #IronMaiden #TDD #agileaus @johnsyweb @metrotrains @thribble
 ttytteristas=1
 urlopen=w3m -dump %U | more
 user=johnsyweb
