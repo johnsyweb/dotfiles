@@ -1,6 +1,12 @@
+#   Filename: .screenrc
+#     Author: Pete Johns
+#    Revised: Tue Nov  8 10:59:11 UTC 2005
+#
 #   Default settings for SCREEN(1). Opens a few screens to be getting on with
 #   and provides a neat purple/green status bar with login@localhost, current
 #   screens and date@time information.
+#
+
 
 # - terminal settings
 #termcap  xterm
@@ -34,8 +40,8 @@ msgwait         1
 startup_message off
 
 # -- default windows
-screen -M -ln -t IM          0 centericq -o
-screen    -ln -t mail        1 mutt 
+screen -M -ln -t Twitter     0 
+screen -M -ln -t mail        1 mutt 
 screen    -ln -t edit        2 $EDITOR
 screen    -ln -t web         3 w3m -B
 screen    -ln -t news        4 slrn
@@ -45,3 +51,6 @@ select  1
 # -- appearance
 backtick 1 86400 86400 whoami
 caption always "%{= dd}%{+ m}%1`@%H%{-}: %{+ g}%+20=%-Lw%50>%{=b m}%n%f %t%{= g}%+Lw%-012= %{+ m}%d%M@%c"
+
+#### Right on, Commander!
+#### ...TRANSMISSION ENDS...
