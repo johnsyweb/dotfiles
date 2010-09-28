@@ -6,17 +6,17 @@
     ci = commit
     co = checkout
     df = diff
-    lg = log -p
+    lg = log --abbrev-commit -p
     st = status
     wc = whatchanged --abbrev-commit
 [color]
     ui = auto
 [core]
-    excludesfile = /Users/paj/dotfiles/git-global-ignore
+    excludesfile = ~/dotfiles/git-global-ignore
     pager = less -+$LESS -FRX
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [sendemail]
-	aliasesfile = /Users/paj/.muttrc-alias
+	aliasesfile = ~/.muttrc-alias
     aliasfiletype = mutt
 [web]
     browser = google-chrome
