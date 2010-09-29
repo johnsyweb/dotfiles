@@ -29,6 +29,3 @@ setenv PYTHONPATH /projects/APGateCommon/bin:${PYTHONPATH}
 setenv PYTHONPATH /projects/pychopper/bin:${PYTHONPATH}
 setenv PYTHONPATH /projects/GateDriverAdd/bin:${PYTHONPATH}
 setenv PATH /projects/GateDriverAdd/bin:${PATH}
-
-
-
