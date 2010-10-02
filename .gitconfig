@@ -22,3 +22,5 @@
     browser = google-chrome
 [browser "google-chrome"]
     cmd = /usr/bin/google-chrome
+[merge]
+    tool=vimdiff
