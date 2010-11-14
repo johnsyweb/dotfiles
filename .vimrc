@@ -40,6 +40,14 @@ map <ESC>[34~  <S-F10>
 imap       <BS>
 cmap       <BS>
 
+"""" Handy keys on the command-line from, ahem, some other system...
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+cnoremap <C-F> <Right>
+cnoremap <C-B> <Left>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
+
 """" GLOBAL OPTIONS {{{
 set   autoindent
 set   autowrite
@@ -357,3 +365,6 @@ endif
 "   [F8]    Diff with version control plug-in
 nnoremap    <F8> :<C-U>VCSVimDiff <CR>
 """" }}}
+
+au BufRead,BufNewFile *.log hi sql guifg=white guibg=red ctermfg=white ctermbg=red
+au BufRead,BufNewFile *.log syn match sql /"\zssql_\w*\ze"/
