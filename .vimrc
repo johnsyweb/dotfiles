@@ -183,6 +183,7 @@ set   verbose=0
 augroup Mail
     autocmd FileType mail   set textwidth=65
     autocmd FileType mail   set formatoptions=tcrq
+    autocmd FileType mail   set spell
 augroup END
 """"}}}
 
@@ -213,16 +214,7 @@ map	<Leader>q :%s/^[> ^I]*//<CR>
 nnoremap \date a<C-R>=strftime("%Y%m%d")<CR><Esc>
 nnoremap \time a<C-R>=strftime("%H:%M")<CR><Esc>
 nnoremap \stamp a<C-R>=strftime("%Y%m%d%H%M%S")<CR><Esc>
-
-
-
 """"}}}
-
-"""" KEY MAPPINGS -- INSERT MODE {{{
-"reformat block
-"imap    <F5> <Esc>=%%a  
-""""}}}
-
 
 """" KEY MAPPINGS -- COMMAND MODE {{{
 " ',c' -- Comment out the current line, appending a '/* paj */' tag
@@ -232,7 +224,6 @@ map	<Leader>C :s}/* \(.*\) */ /* ${LOGNAME} */}\1/<CR>
 """"}}}
 
 """" KEY MAPPINGS -- COMMAND LINE {{{
-"cmap W w
 cabb W w
 """"}}}
 
@@ -242,10 +233,6 @@ cabb W w
 "map	<Leader>S gg/^[> ]*-- $<CR>dG
 map	<Leader>S :%s/^>*-- \(\n.*\)\{\}//e<CR>
 """"}}}
-
-" ',s' postpend my official signature to the document.
-"map	<Leader>s mq:$<CR>o-- <Esc>:r! /home/paj/.signature.sh<CR>`q
-
 
 " This one's great!
 "   (a) Remove all leading spaces from lines.
@@ -291,8 +278,8 @@ map	<Leader>**  ,rls,rts,>>,par,c>,rm>,r4>,ablgg0}:noh<CR>
 
 " 2005-08-17 paj adds some bonus functionality: Remove email addresses, remove
 "                signatures, format email, add my sig.
-imap	<Leader>fm <ESC>,E,S,**,s i
-nmap	<Leader>fm ,E,S,**,s
+imap	<Leader>fm <ESC><Leader>E<Leader>S<Leader>**<Leader>s i
+nmap	<Leader>fm <Leader>E<Leader>S<Leader>**<Leader>s
 
 """" EXTENSIONS (heh) {{{
 """"}}}
