@@ -3,7 +3,7 @@
 "  Maintainer: Pete Johns <paj-vim@johnsy.com>
 "         URL: http://github.com/johnsyweb/dotfiles/blob/master/.vimrc
 
-"""" I'm having some terminal problems under Solaris. 
+"""" I'm having some terminal problems under Solaris.
 """" These mappings help:
 map <ESC>[1~   <Home>
 map <ESC>[2~   <Insert>
@@ -79,7 +79,7 @@ set   matchpairs=(:),{:},[:],<:>
 set   matchtime=2
 set   mousefocus
 set   mousehide
-set   mousemodel=popup_setpos                                                     
+set   mousemodel=popup_setpos
 set   showcmd
 set   smd
 set nostartofline
@@ -183,7 +183,6 @@ set   verbose=0
 augroup Mail
     autocmd FileType mail   set textwidth=65
     autocmd FileType mail   set formatoptions=tcrq
-    autocmd FileType mail   set spell
 augroup END
 """"}}}
 
@@ -207,7 +206,7 @@ autocmd BufEnter,BufRead *.cf,*.rules,*.tmpl  set tabstop=8
 
 """" KEY MAPPINGS -- GENERAL {{{
 noremap -    gqap
-vmap    -    gq                 
+vmap    -    gq
 map	<Leader>e :%s/\(\[\|<\)\(mailto:\|SMTP:\)*[A-Za-z0-9_\-\.]*@[A-Za-z0-9_\-\.]*\(\]\|>\)//ge<CR>
 map	<Leader>E :%s/\([A-Za-z0-9_\.]*@[A-Za-z0-9_\-\.]\)[A-Za-z0-9_\-\.]*/\1.../ge<CR>
 map	<Leader>q :%s/^[> ^I]*//<CR>
@@ -329,7 +328,7 @@ nnoremap    <F3> :<C-U>TUT<CR>
 "   [F4]    Go to next quick-fix
 "[Shift-F4] Go to previous quick-fix
 "
-noremap    <F4>   :<C-U>cnext <CR>   
+noremap    <F4>   :<C-U>cnext <CR>
 noremap    <S-F4> :<C-U>cprevious <CR>
 
 "   [F5]    make
@@ -340,7 +339,7 @@ nnoremap    <S-F5> :<C-U>make<space>
 
 "   [F6]    Break a line and right-align it
 "
-nnoremap    <F6> <Esc>i<CR><Esc>:ri <CR> 
+nnoremap    <F6> <Esc>i<CR><Esc>:ri <CR>
 
 "   [F7]    Toggle Vim v7.0 Spell-Checking {{{
 if v:version >= 700
@@ -352,6 +351,9 @@ endif
 "   [F8]    Diff with version control plug-in
 nnoremap    <F8> :<C-U>VCSVimDiff <CR>
 """" }}}
+
+"    \1      git: show first commit where term under cursor was added:
+nnoremap <leader>1 :!git log --reverse -p -S<cword> %<cr>
 
 au BufRead,BufNewFile *.log hi sql guifg=white guibg=red ctermfg=white ctermbg=red
 au BufRead,BufNewFile *.log syn match sql /"\zssql_\w*\ze"/
