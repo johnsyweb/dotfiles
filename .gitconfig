@@ -6,7 +6,8 @@
     ci = commit
     co = checkout
     df = diff
-    lg = log --abbrev-commit -p
+    lg = log --oneline --graph --decorate --all
+    lgv = log --abbrev-commit -p
     st = status
     wc = whatchanged --abbrev-commit
 [color]
