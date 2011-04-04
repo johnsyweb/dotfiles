@@ -74,7 +74,6 @@ setenv PATH /local/app/gnu/grep/current/bin:${PATH}
 setenv PATH /local/app/screen/current/bin:${PATH}
 
 setenv PATH ${HOME}/bin:${PATH}
-setenv PATH ~mcurtis/bin:~mcurtis/local/bin:${PATH}
 setenv PATH ~mcurtis/old-gate-home/gateDEV/bin:${PATH}
 setenv PATH ~mcurtis/old-gate-home/gateDEV/bin/lib:${PATH}
 setenv LD_LIBRARY_PATH ~mcurtis/local/lib:${LD_LIBRARY_PATH}
