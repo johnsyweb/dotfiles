@@ -1,6 +1,8 @@
 # Startup for tcsh at ${EMPLOYER_OF_PAJ}
-if ( -f /home/gate/etc/env/COMMON_ENV ) then
+if ( -f /usr/local/standard.cshrc ) then
     source /usr/local/standard.cshrc
+endif
+if ( -d /home/Glue/dev/etc ) then
     source /home/Glue/dev/etc/env/GLUEITG_ENV
     source /home/Glue/dev/etc/env/GLUEGEN_ENV
     source /home/Glue/dev/etc/env/COMMON_ENV
@@ -10,6 +12,7 @@ else
 endif
 
 if ( -e /usr/atria/bin/cleartool ) then
+    setenv PATH /usr/atria/bin:${PATH}
     alias ct /usr/atria/bin/cleartool
 endif
 
@@ -48,6 +51,10 @@ setenv GIT_BRANCH_CMD "sh -c 'git branch --no-color 2> /dev/null' | sed -e '/^[^
 alias prompt 'set prompt = "%{\033[0m%}%n@${SHORTHOST}(${ENV_MODE}) `$GIT_BRANCH_CMD` %c3% "'
 prompt
 
+#Git + SVN
+setenv PERL5LIB ~dcollins/lib/perl:~dcollins/lib/${ARCH_BASE}
+setenv LD_LIBRARY_PATH ~dcollins/lib/${ARCH_BASE}:${LD_LIBRARY_PATH}
+
 #dmake
 setenv CONFIG_PREFIX ${local}
 setenv NCPUS `kstat -p unix:0:system_misc:ncpus | cut -f 2`
@@ -79,3 +86,4 @@ setenv PYTHONPATH /projects/pychopper/bin:${PYTHONPATH}
 setenv PYTHONPATH /projects/GateDriverAdd/bin:${PYTHONPATH}
 setenv PATH /projects/GateDriverAdd/bin:${PATH}
 
+setenv PATH /usr/ccs/bin:${PATH}
