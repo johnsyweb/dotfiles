@@ -97,7 +97,7 @@ set   showmatch
 set   showmode
 set   smartindent
 set   smarttab
-set   statusline=[%n]\ %<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
+set   statusline=[%n]\ %<%f%h%m\ %{fugitive#statusline()}\ %r%=%b\ 0x%B\ \ %l,%c%V\ %P
 set   tabstop=8
 set   tags+=$WKSPACE/tags,$WKSPACE/src/tags
 set   textwidth=0
