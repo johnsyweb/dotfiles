@@ -96,7 +96,7 @@ set   showmode
 set   smartindent
 set   smarttab
 set   statusline=[%n]\ %<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
-set   tabstop=4
+set   tabstop=8
 set   tags+=$WKSPACE/tags,$WKSPACE/src/tags
 set   textwidth=0
 set   titlestring=%t%(\ %M%)%(\ (%{expand(\"%:~:.:h\")})%)%(\ %a%)
@@ -315,6 +315,7 @@ highlight default link mailSignature Type
 "This should probably be in a separate file, but I shall leave it here for now:
 syntax match Italic /\<paj\>/
 syntax match Smiley /[8:;][-*o][(){}\[\]\/\\|p]/
+match ErrorMsg /\s\+$/
 
 """" Function Key Mappings {{{
 "   [F1]    :help. Built-in.
