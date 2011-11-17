@@ -55,7 +55,7 @@ set   background=dark
 set   backspace=indent,eol,start
 set   browsedir=buffer
 set nocindent
-set   cinoptions=>s,e0,n0,f0,{0,}0,^0,:s,=s,ps,t0,+s,(0,)20,*30,g0,is
+set   cinoptions=>s,e0,n0,f0,{0,}0,^0,:s,=s,ps,t0,+s,(s,)20,*30,g0,is,Ws,U4
 set   cinwords=
 set   clipboard=exclude:.*
 set   cmdheight=2
