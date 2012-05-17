@@ -65,6 +65,7 @@ set   diffopt+=iwhite
 set noerrorbells
 set   equalalways
 set   expandtab
+set   grepprg=ack
 set   helpheight=15
 set   history=64
 set   hls
