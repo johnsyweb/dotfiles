@@ -1,3 +1,2 @@
 alias ls 'ls -laF'
-#alias grep 'grep --color'
 alias cdiff 'cleartool diff -dif -pred'
