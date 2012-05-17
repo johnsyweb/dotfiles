@@ -62,6 +62,7 @@ set   cmdheight=2
 set nocp
 set   dictionary=/usr/share/dict/words
 set   diffopt+=iwhite
+set   display=uhex
 set noerrorbells
 set   equalalways
 set   expandtab
