@@ -35,7 +35,7 @@ iabbr <buffer> sat self.assertTrue
 " A tab character is always eight spaces.
 setlocal tabstop=8 softtabstop=4 shiftwidth=4 textwidth=80 smarttab expandtab smartindent
 setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except,0#
-
+setlocal keywordprg=pydoc
 
 function! GetClassNameFromLine(line_number)
     let l:class_regex = 'class\s\+\zs\i\+' 
