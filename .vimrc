@@ -68,7 +68,7 @@ set   equalalways
 set   expandtab
 set   grepprg=ack
 set   helpheight=15
-set   history=64
+set   history=10000
 set   hls
 set   ignorecase
 set   incsearch
@@ -142,8 +142,6 @@ endif
 """" You could put this in .gvimrc, but I like having just the one file to move {{{
 """" from server to server.
 if has("gui_running")
-    "set guifont=Lucida_Console:h8:cDEFAULT
-    set guifont=Monospace\ 9
     set guicursor=a:blinkon0
     set guioptions=bgmprT
 
@@ -358,5 +356,6 @@ nnoremap    <F8> :<C-U>VCSVimDiff <CR>
 "    \1      git: show first commit where term under cursor was added:
 nnoremap <leader>1 :!git log --reverse -p -S<cword> %<cr>
 
-au BufRead,BufNewFile *.log hi sql guifg=white guibg=red ctermfg=white ctermbg=red
-au BufRead,BufNewFile *.log syn match sql /"\zssql_\w*\ze"/
+
+let c_no_curly_error=1
+
