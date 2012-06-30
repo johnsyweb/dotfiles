@@ -254,7 +254,7 @@ map	<Leader>S :%s/^>*-- \(\n.*\)\{\}//e<CR>
 map	<Leader>+ {:1,$!par w72 }
 
 " ',s' postpend my official signature to the document.
-map	<Leader>s mq:$<CR>o<CR>--paj<CR>-- <Esc>:r! ${HOME}/.signature.sh<CR>`q
+map	<Leader>s mq:$<CR>o<CR>--paj<CR>-- <Esc>:r!sigline.py<CR>`q
 
 " This one's great! [Re-written, by paj]
 "   (a) Remove all leading spaces from lines.
@@ -299,10 +299,17 @@ nmap [c   :?^\s*case? mark k\|echo getline("'k")<cr>
 
 
 """" Abbreviations {{{
-abbreviate teh      the
-abbreviate flase    false
+abbreviate -->      →
+abbreviate :-(      ☹
+abbreviate :-)      ☺
+abbreviate <--      ←
+abbreviate <==      ⇐
+abbreviate ==>      ⇒
 abbreviate JOhns    Johns
 abbreviate adn      and
+abbreviate flase    false
+abbreviate teh      the
+abbreviate (snowman) ☃
 """"}}}
 
 """" Colours {{{
