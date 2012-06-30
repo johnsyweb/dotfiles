@@ -13,6 +13,7 @@
 CVS
 .cdtproject
 .cvsignore
+tags
 
 # autotools generated files
 .deps/
