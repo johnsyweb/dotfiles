@@ -5,9 +5,10 @@
     br = branch
     ci = commit
     co = checkout
+    cr = log --abbrev-commit -p
     df = diff
-    lg = log --oneline --graph --decorate --all
-    lgv = log --abbrev-commit -p
+    lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all --decorate
+    pr = pull --rebase
     st = status
     wc = whatchanged --abbrev-commit
 [color]
@@ -16,9 +17,6 @@
     excludesfile = ~/dotfiles/git-global-ignore
     pager = less -+$LESS -FRX
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-[sendemail]
-	aliasesfile = ~/.muttrc-alias
-    aliasfiletype = mutt
 [web]
     browser = google-chrome
 [browser "google-chrome"]
