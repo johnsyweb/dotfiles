@@ -43,13 +43,9 @@ endif
 normal gg}
 
 """"    Append signature...
-"   Mark where we are (a) and go to end of file
 silent normal maG
-"   Signatures start dash, dash, space
 silent normal o-- 
-"   read in ${HOME}./signature.sh
-silent r!${HOME}/.signature.sh
-"   Return whence thou camest
+silent r!sigline.py
 silent normal 'a
 
 nohls
