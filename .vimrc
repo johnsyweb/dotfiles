@@ -356,6 +356,7 @@ nnoremap    <F8> :<C-U>VCSVimDiff <CR>
 "    \1      git: show first commit where term under cursor was added:
 nnoremap <leader>1 :!git log --reverse -p -S<cword> %<cr>
 
-
 let c_no_curly_error=1
+
+call pathogen#infect()
 
