@@ -82,6 +82,7 @@ set   matchtime=2
 set   mousefocus
 set   mousehide
 set   mousemodel=popup_setpos
+set showbreak=↪
 set   showcmd
 set   smd
 set nostartofline
