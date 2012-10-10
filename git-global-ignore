@@ -1,18 +1,21 @@
 *.a
 *.lo
 *.o
+*.orig
+*.patch
 *.pyc
 *.so
+*/sybinit.err
 *~
 .#*
 .*.swp
 .DS_Store
+.cdtproject
+.cvsignore
 .svn
 /#*#
 /.#*
 CVS
-.cdtproject
-.cvsignore
 tags
 
 # autotools generated files
