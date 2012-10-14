@@ -98,7 +98,11 @@ set   showmatch
 set   showmode
 set   smartindent
 set   smarttab
-set   statusline=[%n]\ %<%f%h%m\ %{fugitive#statusline()}\ %r%=%b\ 0x%B\ \ %l,%c%V\ %P
+set   statusline=[%n]\ %<%f%h%m\ %{fugitive#statusline()}
+set   statusline+=\ %#warningmsg#
+set   statusline+=%{SyntasticStatuslineFlag()}
+set   statusline+=%*
+set   statusline+=\ %r%=%b\ 0x%B\ \ %l,%c%V\ %P
 set   tabstop=8
 set   tags+=$WKSPACE/tags,$WKSPACE/src/tags
 set   textwidth=0
@@ -360,4 +364,11 @@ nnoremap <leader>1 :!git log --reverse -p -S<cword> %<cr>
 let c_no_curly_error=1
 
 call pathogen#infect()
+
+if executable('clang')
+    let g:syntastic_cpp_compiler = 'clang'
+    let g:syntastic_cpp_compiler_options = ' --analyze '
+    let g:syntastic_error_symbol='✗'
+    let g:syntastic_warning_symbol='⚠'
+endif
 
