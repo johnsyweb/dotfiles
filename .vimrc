@@ -372,3 +372,5 @@ if executable('clang++')
     let g:syntastic_warning_symbol='⚠'
 endif
 
+let g:snips_author = 'Pete Johns'
+
