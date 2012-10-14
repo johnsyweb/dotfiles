@@ -164,7 +164,7 @@ endif
 """"}}}
 
 """" GUI OPTIONS -- MENUS {{{
-amenu &PAJ.Edit\ _&vimrc              :edit $HOME/.vimrc<CR>
+amenu &PAJ.Edit\ _&vimrc              :edit $MYVIMRC<CR>
 amenu &PAJ.Convert\ &TABs\ to\ spaces :%s/<TAB>/    /g<CR>
 amenu &PAJ.Set\ DOS\ text\ format     :set fileformat=dos<CR>
 amenu &PAJ.Set\ UNIX\ text\ format    :set fileformat=unix<CR>
@@ -172,7 +172,6 @@ amenu &PAJ.Strip\ \quotes\            :%s/> *//g<CR>
 amenu &PAJ.Strip\ trailing\ spaces    :%s/[ <TAB>]\+$//g<CR>
 amenu &PAJ.Strip\ leading\ spaces     :%s/^\ \+//g<CR>
 amenu &PAJ.Shrink\ white\ space       :%s/\ \+/ /g<CR>
-nmap	<Leader>vimrc :edit $HOME/.vimrc<CR>
 """"}}}
 
 
@@ -218,6 +217,7 @@ map	<Leader>q :%s/^[> ^I]*//<CR>
 nnoremap \date a<C-R>=strftime("%Y%m%d")<CR><Esc>
 nnoremap \time a<C-R>=strftime("%H:%M")<CR><Esc>
 nnoremap \stamp a<C-R>=strftime("%Y%m%d%H%M%S")<CR><Esc>
+nnoremap <Leader>vimrc :e $MYVIMRC<CR>
 """"}}}
 
 """" KEY MAPPINGS -- COMMAND MODE {{{
