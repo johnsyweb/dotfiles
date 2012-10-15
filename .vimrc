@@ -373,6 +373,7 @@ let c_no_curly_error=1
 call pathogen#infect()
 
 if executable('clang++')
+    let g:syntastic_check_on_open = 1
     let g:syntastic_cpp_compiler = 'clang++'
     let g:syntastic_cpp_compiler_options = ' -std=c++11 --analyze '
     let g:syntastic_error_symbol='✗'
