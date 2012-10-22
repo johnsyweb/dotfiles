@@ -212,22 +212,22 @@ autocmd BufEnter,BufRead *.java  set errorformat=\"%f\"\\\,\ line\ %l.%c:%m\,\ %
 autocmd BufEnter,BufRead *.cf,*.rules,*.tmpl  set tabstop=8
 """"}}}
 
-autocmd BufEnter,Bufread *sqsh-edit* set filetype sql
+autocmd BufEnter,Bufread *sqsh-edit* set filetype=sql
 
 """" KEY MAPPINGS -- GENERAL {{{
-nnoremap <Leader>e :%s/\(\[\|<\)\(mailto:\|SMTP:\)*[A-Za-z0-9_\-\.]*@[A-Za-z0-9_\-\.]*\(\]\|>\)//ge<CR>
-nnoremap <Leader>E :%s/\([A-Za-z0-9_\.]*@[A-Za-z0-9_\-\.]\)[A-Za-z0-9_\-\.]*/\1.../ge<CR>
-nnoremap <Leader>q :%s/^[> ^I]*//<CR>
-nnoremap <Leader>date a<C-R>=strftime("%Y%m%d")<CR><Esc>
-nnoremap <Leader>time a<C-R>=strftime("%H:%M")<CR><Esc>
-nnoremap <Leader>stamp a<C-R>=strftime("%Y%m%d%H%M%S")<CR><Esc>
+nnoremap<Leader>e :%s/\(\[\|<\)\(mailto:\|SMTP:\)*[A-Za-z0-9_\-\.]*@[A-Za-z0-9_\-\.]*\(\]\|>\)//ge<CR>
+nnoremap<Leader>E :%s/\([A-Za-z0-9_\.]*@[A-Za-z0-9_\-\.]\)[A-Za-z0-9_\-\.]*/\1.../ge<CR>
+nnoremap<Leader>q :%s/^[> ^I]*//<CR>
+nnoremap \date a<C-R>=strftime("%Y%m%d")<CR><Esc>
+nnoremap \time a<C-R>=strftime("%H:%M")<CR><Esc>
+nnoremap \stamp a<C-R>=strftime("%Y%m%d%H%M%S")<CR><Esc>
 nnoremap <Leader>vimrc :e $MYVIMRC<CR>
 """"}}}
 
 """" KEY MAPPINGS -- COMMAND MODE {{{
-" '\c' -- Comment out the current line, appending a '/* paj */' tag
+" ',c' -- Comment out the current line, appending a '/* paj */' tag
 nnoremap <Leader>c :s}^\([    ]*\)\(.*\)$}\1/* \2 */ /* ${LOGNAME} */}<CR>
-" '\C' -- Uncomment the current line, removing a '/* paj */' tag
+" ',C' -- Uncomment the current line, removing a '/* paj */' tag
 nnoremap <Leader>C :s}/* \(.*\) */ /* ${LOGNAME} */}\1/<CR>
 """"}}}
 
