@@ -1,7 +1,7 @@
 "        File: .vim/colors/primitive.vim [Vim colour file]
-" Description: Local colour file - set colours 
+" Description: Local colour file - set colours
 "  Maintainer: Pete Johns <paj-vim@johnsy.com>
-"         URL: http://johnsy.com/dotfiles/.vim/colors/primitive.vim 
+"         URL: http://johnsy.com/dotfiles/.vim/colors/primitive.vim
 "     Version: 1.1
 " Last Change: 2006-03-21
 
@@ -59,14 +59,14 @@ highlight Special       ctermfg=DarkMagenta                     guifg=DarkMagent
 highlight SpecialKey    ctermfg=DarkGreen                       guifg=DarkGreen
 if (v:version >= 700)
     highlight PMenu         ctermfg=DarkBlue    ctermbg=Cyan        guifg=DarkBlue      guibg=Cyan
-    highlight SpellCap      ctermfg=Green   ctermbg=None term=Bold  guisp=Green         gui=undercurl 
+    highlight SpellCap      ctermfg=Green   ctermbg=None term=Bold  guisp=Green         gui=undercurl
     highlight SpellLocal    ctermfg=Cyan    ctermbg=None term=Bold  guisp=Cyan          gui=undercurl
     highlight SpellRare     ctermfg=Magenta ctermbg=None term=Bold  guisp=Magenta       gui=undercurl
     highlight SpellBad      ctermfg=Red     ctermbg=None term=Bold  guisp=Red           gui=undercurl
 endif " version 7+
 highlight Statement     ctermfg=Black       term=bold           guifg=Black         gui=Bold
 highlight StatusLine    ctermfg=DarkBlue    ctermbg=Cyan        guifg=DarkBlue      guibg=Cyan
-highlight StatusLineNC  ctermfg=DarkBlue    ctermbg=White       guifg=DarkBlue      guibg=White     
+highlight StatusLineNC  ctermfg=DarkBlue    ctermbg=White       guifg=DarkBlue      guibg=White
 highlight String        ctermfg=DarkMagenta                     guifg=DarkMagenta
 highlight Title         ctermfg=DarkMagenta                     guifg=DarkMagenta
 highlight Todo          ctermfg=DarkRed     ctermbg=DarkYellow  guifg=DarkRed       guibg=DarkYellow
@@ -86,6 +86,4 @@ highlight link mailEmail     Identifier
 highlight link mailURL       Underlined
 highlight link mailSubject   SpecialKey
 highlight link mailSignature Type
-
-
 " }}}
