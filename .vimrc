@@ -37,8 +37,10 @@ map <ESC>[32~  <S-F8>
 map <ESC>[33~  <S-F9>
 map <ESC>[34~  <S-F10>
 """" And sometimes on my Mac, too...
-imap       <BS>
-cmap       <BS>
+if has('multi_byte')
+    imap       <BS>
+    cmap       <BS>
+endif
 
 """" Handy keys on the command-line from, ahem, some other system...
 cnoremap <C-A> <Home>
@@ -82,7 +84,9 @@ set   matchtime=2
 set   mousefocus
 set   mousehide
 set   mousemodel=popup_setpos
-set showbreak=↪
+if has('multi_byte')
+    set showbreak=↪
+endif
 set   showcmd
 set   smd
 set nostartofline
@@ -208,23 +212,23 @@ autocmd BufEnter,BufRead *.java  set errorformat=\"%f\"\\\,\ line\ %l.%c:%m\,\ %
 autocmd BufEnter,BufRead *.cf,*.rules,*.tmpl  set tabstop=8
 """"}}}
 
+autocmd BufEnter,Bufread *sqsh-edit* set filetype sql
+
 """" KEY MAPPINGS -- GENERAL {{{
-noremap -    gqap
-vmap    -    gq
-map	<Leader>e :%s/\(\[\|<\)\(mailto:\|SMTP:\)*[A-Za-z0-9_\-\.]*@[A-Za-z0-9_\-\.]*\(\]\|>\)//ge<CR>
-map	<Leader>E :%s/\([A-Za-z0-9_\.]*@[A-Za-z0-9_\-\.]\)[A-Za-z0-9_\-\.]*/\1.../ge<CR>
-map	<Leader>q :%s/^[> ^I]*//<CR>
-nnoremap \date a<C-R>=strftime("%Y%m%d")<CR><Esc>
-nnoremap \time a<C-R>=strftime("%H:%M")<CR><Esc>
-nnoremap \stamp a<C-R>=strftime("%Y%m%d%H%M%S")<CR><Esc>
+nnoremap <Leader>e :%s/\(\[\|<\)\(mailto:\|SMTP:\)*[A-Za-z0-9_\-\.]*@[A-Za-z0-9_\-\.]*\(\]\|>\)//ge<CR>
+nnoremap <Leader>E :%s/\([A-Za-z0-9_\.]*@[A-Za-z0-9_\-\.]\)[A-Za-z0-9_\-\.]*/\1.../ge<CR>
+nnoremap <Leader>q :%s/^[> ^I]*//<CR>
+nnoremap <Leader>date a<C-R>=strftime("%Y%m%d")<CR><Esc>
+nnoremap <Leader>time a<C-R>=strftime("%H:%M")<CR><Esc>
+nnoremap <Leader>stamp a<C-R>=strftime("%Y%m%d%H%M%S")<CR><Esc>
 nnoremap <Leader>vimrc :e $MYVIMRC<CR>
 """"}}}
 
 """" KEY MAPPINGS -- COMMAND MODE {{{
-" ',c' -- Comment out the current line, appending a '/* paj */' tag
-map	<Leader>c :s}^\([    ]*\)\(.*\)$}\1/* \2 */ /* ${LOGNAME} */}<CR>
-" ',C' -- Uncomment the current line, removing a '/* paj */' tag
-map	<Leader>C :s}/* \(.*\) */ /* ${LOGNAME} */}\1/<CR>
+" '\c' -- Comment out the current line, appending a '/* paj */' tag
+nnoremap <Leader>c :s}^\([    ]*\)\(.*\)$}\1/* \2 */ /* ${LOGNAME} */}<CR>
+" '\C' -- Uncomment the current line, removing a '/* paj */' tag
+nnoremap <Leader>C :s}/* \(.*\) */ /* ${LOGNAME} */}\1/<CR>
 """"}}}
 
 """" KEY MAPPINGS -- COMMAND LINE {{{
@@ -234,56 +238,43 @@ cabb W w
 
 """" KEY MAPPINGS -- MAIL + NEWS {{{
 " ',S' deletes the signature.
-"map	<Leader>S gg/^[> ]*-- $<CR>dG
-map	<Leader>S :%s/^>*-- \(\n.*\)\{\}//e<CR>
+nnoremap <Leader>S :%s/^>*-- \(\n.*\)\{\}//e<CR>
 """"}}}
 
-" This one's great!
-"   (a) Remove all leading spaces from lines.
-"   (b) Remove all trailing spaces from lines.
-"   (c) Pipe through 'par' to reformat the paragraphs.
-"   (d) Replace '> ' with '>' -- that's my indent style.
-"   (e) Prepend '>' to every line.
-"   (f) Clear all lines consisting solely of '>'s.
-"map	<Leader>== {:1,$s/^[ ]*// }{:1,$s/[ ]*$// }{:1,$s/> />/g }{:1,$s/^/>/ }{:1,$s/^[>]*$// }:1
-
-" ',**' -- Same as the previous one, apart from no prepending of '>' [e].
-"map	<Leader>** {:1,$s/^[ ]*// }{:1,$s/[ ]*$// }{:1,$s/> />/g }{:1,$s/^[>]*$// }:1
-
 " ',+' -- pass the whole document thru "par"
-map	<Leader>+ {:1,$!par w72 }
+nnoremap <Leader>+ {:1,$!par w72 }
 
 " ',s' postpend my official signature to the document.
-map	<Leader>s mq:$<CR>o<CR>--paj<CR>-- <Esc>:r!sigline.py<CR>`q
+nnoremap <Leader>s mq:$<CR>o<CR>--paj<CR>-- <Esc>:r!sigline.py<CR>`q
 
 " This one's great! [Re-written, by paj]
 "   (a) Remove all leading spaces from lines.
-map	<Leader>rls :%s/^\s\+//e<CR>
+nnoremap <Leader>rls :%s/^\s\+//e<CR>
 "   (b) Remove all trailing spaces from lines.
-map	<Leader>rts :%s/\s\+$//e<CR>
+nnoremap <Leader>rts :%s/\s\+$//e<CR>
 "   (c) Replace '> ' with '>' -- that's my indent style.
-map	<Leader>>>  :%s/>\s\+/>/e<CR>
+nnoremap <Leader>>>  :%s/>\s\+/>/e<CR>
 "   (d) Use Vim  to reformat the paragraphs.
-map	<Leader>par  mqgggqG`q<CR>
+nnoremap <Leader>par  mqgggqG`q<CR>
 "   (e) Prepend '>' to every line.
-map	<Leader>ad> :%s/^/>/e<CR>
+nnoremap <Leader>ad> :%s/^/>/e<CR>
 "   (f) Remove multiple lines consisting solely of '>'s.
-map	<Leader>c>  :%s/\(^>\s*\n\)\{2,\}//ge<CR>
+nnoremap <Leader>c>  :%s/\(^>\s*\n\)\{2,\}//ge<CR>
 "   (g) Remove all lines consisting solely of multiple '>'s.
-map	<Leader>rm>  :%s/^>\{2,\}\s*\n//ge<CR>
+nnoremap <Leader>rm>  :%s/^>\{2,\}\s*\n//ge<CR>
 "   (h) Remove all lines beginning with 4 or more '>'s.
-map	<Leader>r4> :%s/^>\{4,\}.*\n//ge<CR>
+nnoremap <Leader>r4> :%s/^>\{4,\}.*\n//ge<CR>
 "   (i) Add a blank line at the end of quoted paragraphs.
-map	<Leader>abl :%s/^>\s*$/>\r/ge<CR>
+nnoremap <Leader>abl :%s/^>\s*$/>\r/ge<CR>
 "   All of the above and move to end of first block
-map	<Leader>==  ,rls,rts,>>,par,ad>,c>,rm>,r4>,ablgg0}:noh<CR>
+nnoremap <Leader>==  ,rls,rts,>>,par,ad>,c>,rm>,r4>,ablgg0}:noh<CR>
 "   Same as the previous one, apart from no prepending of '>' [e].
-map	<Leader>**  ,rls,rts,>>,par,c>,rm>,r4>,ablgg0}:noh<CR>
+nnoremap <Leader>**  ,rls,rts,>>,par,c>,rm>,r4>,ablgg0}:noh<CR>
 
 " 2005-08-17 paj adds some bonus functionality: Remove email addresses, remove
 "                signatures, format email, add my sig.
-imap	<Leader>fm <ESC><Leader>E<Leader>S<Leader>**<Leader>s i
-nmap	<Leader>fm <Leader>E<Leader>S<Leader>**<Leader>s
+inoremap <Leader>fm <ESC><Leader>E<Leader>S<Leader>**<Leader>s i
+nnoremap <Leader>fm <Leader>E<Leader>S<Leader>**<Leader>s
 
 """" EXTENSIONS (heh) {{{
 """"}}}
@@ -295,21 +286,23 @@ endif
 
 
 " '[c' -- searches back to the previous case statement and echoes it to the status line
-nmap [c   :?^\s*case? mark k\|echo getline("'k")<cr>
+nnoremap [c   :?^\s*case? mark k\|echo getline("'k")<cr>
 
 
 """" Abbreviations {{{
-abbreviate -->      →
-abbreviate :-(      ☹
-abbreviate :-)      ☺
-abbreviate <--      ←
-abbreviate <==      ⇐
-abbreviate ==>      ⇒
+if has('multi_byte')
+    abbreviate (snowman) ☃
+    abbreviate -->      →
+    abbreviate :-(      ☹
+    abbreviate :-)      ☺
+    abbreviate <--      ←
+    abbreviate <==      ⇐
+    abbreviate ==>      ⇒
+endif
 abbreviate JOhns    Johns
 abbreviate adn      and
 abbreviate flase    false
 abbreviate teh      the
-abbreviate (snowman) ☃
 """"}}}
 
 """" Colours {{{
@@ -376,8 +369,13 @@ if executable('clang++')
     let g:syntastic_check_on_open = 1
     let g:syntastic_cpp_compiler = 'clang++'
     let g:syntastic_cpp_compiler_options = ' -std=c++11 --analyze '
-    let g:syntastic_error_symbol='✗'
-    let g:syntastic_warning_symbol='⚠'
+    if has('multi_byte')
+        let g:syntastic_error_symbol='✗'
+        let g:syntastic_warning_symbol='⚠'
+    else
+        let g:syntastic_error_symbol='X'
+        let g:syntastic_warning_symbol='>'
+    endif
 endif
 
 let g:snips_author = 'Pete Johns'
