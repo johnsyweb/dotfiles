@@ -145,6 +145,9 @@ let php_folding = 0
 """" If we're in a colour terminal (or this is the GUI version), turn on syntax. {{{
 if (&t_Co > 1 ) || has("gui_running")
     syntax on
+    if (&t_Co >= 256)
+        let g:solarized_termcolors=256
+    endif
 endif
 """"}}}
 
@@ -204,7 +207,6 @@ autocmd BufWrite,BufLeave *w3m*  execute "write! ".expand("<afile>").".backup"
 
 
 """" AUTOCMDS -- SOURCE CODE -- JAVA {{{
-autocmd BufEnter,BufRead *.java  set makeprg=javac\ %
 autocmd BufEnter,BufRead *.java  set errorformat=\"%f\"\\\,\ line\ %l.%c:%m\,\ %f:%l:%m
 """"}}}
 
@@ -305,8 +307,15 @@ abbreviate flase    false
 abbreviate teh      the
 """"}}}
 
+call pathogen#infect()
+
 """" Colours {{{
-colorscheme desert
+try
+    colorscheme solarized
+catch
+    colorscheme desert
+endtry
+
 "TODO: This will go elsewhere:
 highlight default mailQuoted1   ctermfg=DarkRed        guifg=Red
 highlight default mailQuoted2   ctermfg=DarkCyan       guifg=Cyan
@@ -363,8 +372,6 @@ nnoremap <leader>1 :!git log --reverse -p -S<cword> %<cr>
 
 let c_no_curly_error=1
 
-call pathogen#infect()
-
 if executable('clang++')
     let g:syntastic_check_on_open = 1
     let g:syntastic_cpp_compiler = 'clang++'
@@ -379,4 +386,5 @@ if executable('clang++')
 endif
 
 let g:snips_author = 'Pete Johns'
+
 
