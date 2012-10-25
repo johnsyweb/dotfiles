@@ -367,6 +367,10 @@ endif
 nnoremap    <F8> :<C-U>VCSVimDiff <CR>
 """" }}}
 
+" Comments are lies!
+nnoremap \ic :<C-U>highlight! link Comment Ignore<CR>
+nnoremap \sc :<C-U>highlight! Comment ctermfg=14 guifg=#80a0ff<CR>
+
 "    \1      git: show first commit where term under cursor was added:
 nnoremap <leader>1 :!git log --reverse -p -S<cword> %<cr>
 
