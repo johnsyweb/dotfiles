@@ -217,12 +217,12 @@ autocmd BufEnter,BufRead *.cf,*.rules,*.tmpl  set tabstop=8
 autocmd BufEnter,Bufread *sqsh-edit* set filetype=sql
 
 """" KEY MAPPINGS -- GENERAL {{{
-nnoremap<Leader>e :%s/\(\[\|<\)\(mailto:\|SMTP:\)*[A-Za-z0-9_\-\.]*@[A-Za-z0-9_\-\.]*\(\]\|>\)//ge<CR>
-nnoremap<Leader>E :%s/\([A-Za-z0-9_\.]*@[A-Za-z0-9_\-\.]\)[A-Za-z0-9_\-\.]*/\1.../ge<CR>
-nnoremap<Leader>q :%s/^[> ^I]*//<CR>
-nnoremap \date a<C-R>=strftime("%Y%m%d")<CR><Esc>
-nnoremap \time a<C-R>=strftime("%H:%M")<CR><Esc>
-nnoremap \stamp a<C-R>=strftime("%Y%m%d%H%M%S")<CR><Esc>
+nnoremap <Leader>e :%s/\(\[\|<\)\(mailto:\|SMTP:\)*[A-Za-z0-9_\-\.]*@[A-Za-z0-9_\-\.]*\(\]\|>\)//ge<CR>
+nnoremap <Leader>E :%s/\([A-Za-z0-9_\.]*@[A-Za-z0-9_\-\.]\)[A-Za-z0-9_\-\.]*/\1.../ge<CR>
+nnoremap <Leader>q :%s/^[> ^I]*//<CR>
+nnoremap <Leader>date a<C-R>=strftime("%Y%m%d")<CR><Esc>
+nnoremap <Leader>time a<C-R>=strftime("%H:%M")<CR><Esc>
+nnoremap <Leader>stamp a<C-R>=strftime("%Y%m%d%H%M%S")<CR><Esc>
 nnoremap <Leader>vimrc :e $MYVIMRC<CR>
 """"}}}
 
@@ -367,12 +367,12 @@ endif
 nnoremap    <F8> :<C-U>VCSVimDiff <CR>
 """" }}}
 
-" Comments are lies!
-nnoremap \ic :<C-U>highlight! link Comment Ignore<CR>
-nnoremap \sc :<C-U>highlight! Comment ctermfg=14 guifg=#80a0ff<CR>
+" Comments are lies (exception that proves the rule).
+nnoremap <Leader>ic :<C-U>highlight! link Comment Ignore<CR>
+nnoremap <Leader>sc :<C-U>highlight! Comment ctermfg=14 guifg=#80a0ff<CR>
 
 "    \1      git: show first commit where term under cursor was added:
-nnoremap <leader>1 :!git log --reverse -p -S<cword> %<cr>
+nnoremap <Leader>1 :!git log --reverse -p -S<cword> %<cr>
 
 let c_no_curly_error=1
 
@@ -390,5 +390,4 @@ if executable('clang++')
 endif
 
 let g:snips_author = 'Pete Johns'
-
 
