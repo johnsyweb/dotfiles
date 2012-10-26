@@ -5,37 +5,37 @@
 
 """" I'm having some terminal problems under Solaris.
 """" These mappings help:
-map <ESC>[1~   <Home>
-map <ESC>[2~   <Insert>
-map <ESC>[3~   <Delete>
-map <ESC>[4~   <End>
-map <ESC>[5~   <PageUp>
-map <ESC>[6~   <PageDown>
-map <ESC>[A    <Up>
-map <ESC>[B    <Down>
-map <ESC>[C    <Right>
-map <ESC>[D    <Left>
-map <ESC>[11~  <F1>
-map <ESC>[12~  <F2>
-map <ESC>[13~  <F3>
-map <ESC>[14~  <F4>
-map <ESC>[15~  <F5>
-map <ESC>[17~  <F6>
-map <ESC>[18~  <F7>
-map <ESC>[19~  <F8>
-map <ESC>[20~  <F9>
-map <ESC>[21~  <F10>
+map <Esc>[1~   <Home>
+map <Esc>[2~   <Insert>
+map <Esc>[3~   <Delete>
+map <Esc>[4~   <End>
+map <Esc>[5~   <PageUp>
+map <Esc>[6~   <PageDown>
+map <Esc>[A    <Up>
+map <Esc>[B    <Down>
+map <Esc>[C    <Right>
+map <Esc>[D    <Left>
+map <Esc>[11~  <F1>
+map <Esc>[12~  <F2>
+map <Esc>[13~  <F3>
+map <Esc>[14~  <F4>
+map <Esc>[15~  <F5>
+map <Esc>[17~  <F6>
+map <Esc>[18~  <F7>
+map <Esc>[19~  <F8>
+map <Esc>[20~  <F9>
+map <Esc>[21~  <F10>
 "" F11 and F12 are the same as S-F1 and S-F2, respectively
-map <ESC>[23~  <S-F1>
-map <ESC>[24~  <S-F2>
-map <ESC>[25~  <S-F3>
-map <ESC>[26~  <S-F4>
-map <ESC>[28~  <S-F5>
-map <ESC>[29~  <S-F6>
-map <ESC>[31~  <S-F7>
-map <ESC>[32~  <S-F8>
-map <ESC>[33~  <S-F9>
-map <ESC>[34~  <S-F10>
+map <Esc>[23~  <S-F1>
+map <Esc>[24~  <S-F2>
+map <Esc>[25~  <S-F3>
+map <Esc>[26~  <S-F4>
+map <Esc>[28~  <S-F5>
+map <Esc>[29~  <S-F6>
+map <Esc>[31~  <S-F7>
+map <Esc>[32~  <S-F8>
+map <Esc>[33~  <S-F9>
+map <Esc>[34~  <S-F10>
 """" And sometimes on my Mac, too...
 if has('multi_byte')
     imap       <BS>
@@ -136,10 +136,10 @@ let g:xml_syntax_folding = 1
 
 """" PHP Syntax {{{
 "XXX Move to .vim/ftplugin/php.vim
-let php_sql_query = 1
-let php_baselib = 1
-let php_htmlInStrings = 1
-let php_folding = 0
+let php_sql_query=1
+let php_baselib=1
+let php_htmlInStrings=1
+let php_folding=0
 """"}}}
 
 """" If we're in a colour terminal (or this is the GUI version), turn on syntax. {{{
@@ -214,15 +214,15 @@ autocmd BufEnter,BufRead *.java  set errorformat=\"%f\"\\\,\ line\ %l.%c:%m\,\ %
 autocmd BufEnter,BufRead *.cf,*.rules,*.tmpl  set tabstop=8
 """"}}}
 
-autocmd BufEnter,Bufread *sqsh-edit* set filetype=sql
+autocmd BufEnter,BufRead *sqsh-edit* set filetype=sql
 
 """" KEY MAPPINGS -- GENERAL {{{
 nnoremap <Leader>e :%s/\(\[\|<\)\(mailto:\|SMTP:\)*[A-Za-z0-9_\-\.]*@[A-Za-z0-9_\-\.]*\(\]\|>\)//ge<CR>
 nnoremap <Leader>E :%s/\([A-Za-z0-9_\.]*@[A-Za-z0-9_\-\.]\)[A-Za-z0-9_\-\.]*/\1.../ge<CR>
 nnoremap <Leader>q :%s/^[> ^I]*//<CR>
-nnoremap <Leader>date a<C-R>=strftime("%Y%m%d")<CR><Esc>
-nnoremap <Leader>time a<C-R>=strftime("%H:%M")<CR><Esc>
-nnoremap <Leader>stamp a<C-R>=strftime("%Y%m%d%H%M%S")<CR><Esc>
+nnoremap <Leader>date a<CR>=strftime("%Y%m%d")<CR><Esc>
+nnoremap <Leader>time a<CR>=strftime("%H:%M")<CR><Esc>
+nnoremap <Leader>stamp a<CR>=strftime("%Y%m%d%H%M%S")<CR><Esc>
 nnoremap <Leader>vimrc :e $MYVIMRC<CR>
 """"}}}
 
@@ -275,7 +275,7 @@ nnoremap <Leader>**  ,rls,rts,>>,par,c>,rm>,r4>,ablgg0}:noh<CR>
 
 " 2005-08-17 paj adds some bonus functionality: Remove email addresses, remove
 "                signatures, format email, add my sig.
-inoremap <Leader>fm <ESC><Leader>E<Leader>S<Leader>**<Leader>s i
+inoremap <Leader>fm <Esc><Leader>E<Leader>S<Leader>**<Leader>s i
 nnoremap <Leader>fm <Leader>E<Leader>S<Leader>**<Leader>s
 
 """" EXTENSIONS (heh) {{{
@@ -288,7 +288,7 @@ endif
 
 
 " '[c' -- searches back to the previous case statement and echoes it to the status line
-nnoremap [c   :?^\s*case? mark k\|echo getline("'k")<cr>
+nnoremap [c   :?^\s*case? mark k\|echo getline("'k")<CR>
 
 
 """" Abbreviations {{{
@@ -372,7 +372,7 @@ nnoremap <Leader>ic :<C-U>highlight! link Comment Ignore<CR>
 nnoremap <Leader>sc :<C-U>highlight! Comment ctermfg=14 guifg=#80a0ff<CR>
 
 "    \1      git: show first commit where term under cursor was added:
-nnoremap <Leader>1 :!git log --reverse -p -S<cword> %<cr>
+nnoremap <Leader>1 :!git log --reverse -p -S<cword> %<CR>
 
 let c_no_curly_error=1
 
