@@ -50,13 +50,11 @@ cnoremap <C-B> <Left>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 
-"""" GLOBAL OPTIONS {{{
 set   autoindent
 set   autowrite
 set   background=dark
 set   backspace=indent,eol,start
 set   browsedir=buffer
-set nocindent
 set   cinoptions=>s,e0,n0,f0,{0,}0,^0,:s,=s,ps,t0,+s,(s,)20,*30,g0,is,Ws,U4
 set   cinwords=
 set   clipboard=exclude:.*
@@ -65,30 +63,26 @@ set nocp
 set   dictionary=/usr/share/dict/words
 set   diffopt+=iwhite
 set   display=uhex
-set noerrorbells
 set   equalalways
 set   expandtab
-set   grepprg=ack
+if executable('ack')
+    set grepprg=ack
+endif
 set   helpheight=15
 set   history=10000
 set   hls
 set   ignorecase
 set   incsearch
-set noinfercase
-set noinsertmode
 set nojoinspaces
 set   laststatus=2
-set   makeprg=make
 set   matchpairs=(:),{:},[:],<:>
 set   matchtime=2
-set   mousefocus
 set   mousehide
 set   mousemodel=popup_setpos
 if has('multi_byte')
     set showbreak=↪
 endif
 set   showcmd
-set   smd
 set nostartofline
 set nottyfast
 set   nrformats-=octal  " Don't bother with octal, I never use it
@@ -99,7 +93,6 @@ set   shiftwidth=4
 set   shortmess=filmnxtToO
 set   showfulltag
 set   showmatch
-set   showmode
 set   smartindent
 set   smarttab
 set   statusline=[%n]\ %<%f%h%m\ %{fugitive#statusline()}
@@ -107,18 +100,13 @@ set   statusline+=\ %#warningmsg#
 set   statusline+=%{SyntasticStatuslineFlag()}
 set   statusline+=%*
 set   statusline+=\ %r%=%b\ 0x%B\ \ %l,%c%V\ %P
-set   tabstop=8
 set   tags+=$WKSPACE/tags,$WKSPACE/src/tags
-set   textwidth=0
 set   titlestring=%t%(\ %M%)%(\ (%{expand(\"%:~:.:h\")})%)%(\ %a%)
-set   vb t_vb=
 set   viminfo='8,f1,"8,n${HOME}/.viminfo
 set   virtualedit=block
-set   visualbell
+set   visualbell t_vb=
 set   wildmenu
-set   wildmode=longest,list
-set nowrap
-""" }}}
+set   wildmode=longest:list
 
 """" Turn on file type stuff to let Vim work its magic {{{
 filetype plugin indent on
