@@ -128,12 +128,6 @@ if ($OS =~"Windows")
     let g:netrw_scp_cmd="\"c:\\Program Files\\PuTTY\\pscp.exe\" -q"
 endif
 
-"""" AUTOCMDS -- CONFIGURATION FILES {{{
-autocmd BufEnter,BufRead *.cf,*.rules,*.tmpl  set tabstop=8
-""""}}}
-
-autocmd BufEnter,BufRead *sqsh-edit* set filetype=sql
-
 """" KEY MAPPINGS -- GENERAL {{{
 nnoremap <Leader>rls :%s/^\s\+//e<CR>
 nnoremap <Leader>rts :%s/\s\+$//e<CR>
