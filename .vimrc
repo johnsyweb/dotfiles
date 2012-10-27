@@ -108,27 +108,14 @@ set   visualbell t_vb=
 set   wildmenu
 set   wildmode=longest:list
 
-"""" Turn on file type stuff to let Vim work its magic {{{
 filetype plugin indent on
-"""" }}}
 
-"""" ToHTML options... {{{
+"""" ToHTML options
 let html_use_css=1
 let html_no_pre=1
 let use_xhtml=1
-"""" }}}
 
-"""" *xml-folding* {{{
 let g:xml_syntax_folding = 1
-"""" }}}
-
-"""" PHP Syntax {{{
-"XXX Move to .vim/ftplugin/php.vim
-let php_sql_query=1
-let php_baselib=1
-let php_htmlInStrings=1
-let php_folding=0
-""""}}}
 
 """" If we're in a colour terminal (or this is the GUI version), turn on syntax. {{{
 if (&t_Co > 1 ) || has("gui_running")
