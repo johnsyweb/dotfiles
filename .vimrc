@@ -83,6 +83,10 @@ if has('multi_byte')
     set showbreak=↪
 endif
 set   showcmd
+if has('spell')
+    set spell
+    set spelllang=en_au
+endif
 set nostartofline
 set nottyfast
 set   nrformats-=octal  " Don't bother with octal, I never use it
@@ -110,7 +114,7 @@ set   wildmode=longest:list
 
 filetype plugin indent on
 
-"""" ToHTML options
+" ToHTML options
 let html_use_css=1
 let html_no_pre=1
 let use_xhtml=1
@@ -128,37 +132,15 @@ if ($OS =~"Windows")
     let g:netrw_scp_cmd="\"c:\\Program Files\\PuTTY\\pscp.exe\" -q"
 endif
 
-"""" KEY MAPPINGS -- GENERAL {{{
 nnoremap <Leader>rls :%s/^\s\+//e<CR>
 nnoremap <Leader>rts :%s/\s\+$//e<CR>
 nnoremap <Leader>date a<CR>=strftime("%Y%m%d")<CR><Esc>
 nnoremap <Leader>time a<CR>=strftime("%H:%M")<CR><Esc>
 nnoremap <Leader>stamp a<CR>=strftime("%Y%m%d%H%M%S")<CR><Esc>
 nnoremap <Leader>vimrc :e $MYVIMRC<CR>
-""""}}}
 
-"""" KEY MAPPINGS -- COMMAND MODE {{{
-" ',c' -- Comment out the current line, appending a '/* paj */' tag
-nnoremap <Leader>c :s}^\([    ]*\)\(.*\)$}\1/* \2 */ /* ${LOGNAME} */}<CR>
-" ',C' -- Uncomment the current line, removing a '/* paj */' tag
-nnoremap <Leader>C :s}/* \(.*\) */ /* ${LOGNAME} */}\1/<CR>
-""""}}}
-
-"""" KEY MAPPINGS -- COMMAND LINE {{{
 cabb W w
-""""}}}
 
-if filereadable(expand("hints"))
-    au BufNewFile,BufReadPost *.c,*.C,*.cpp,*.c++,*.CPP,*.cxx
-    so hints
-endif
-
-
-" '[c' -- searches back to the previous case statement and echoes it to the status line
-nnoremap [c   :?^\s*case? mark k\|echo getline("'k")<CR>
-
-
-"""" Abbreviations {{{
 if has('multi_byte')
     abbreviate (snowman) ☃
     abbreviate -->      →
@@ -172,11 +154,9 @@ abbreviate JOhns    Johns
 abbreviate adn      and
 abbreviate flase    false
 abbreviate teh      the
-""""}}}
 
 call pathogen#infect()
 
-"""" Colours {{{
 try
     colorscheme solarized
 catch
@@ -187,41 +167,27 @@ syntax match Italic /\<paj\>/
 syntax match Smiley /[8:;][-*o][(){}\[\]\/\\|p]/
 match ErrorMsg /\s\+$/
 
-"""" Function Key Mappings {{{
 "   [F1]    :help. Built-in.
-
 "   [F2]    shows and hides whitespace.
-nnoremap    <F2> :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
-
+nnoremap    <F2> :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list?<CR>
 "   [F3]    toggles between (header, ) source and test files.
 nnoremap    <F3> :<C-U>TUT<CR>
-
 "   [F4]    Go to next quick-fix
 "[Shift-F4] Go to previous quick-fix
-"
 noremap    <F4>   :<C-U>cnext <CR>
 noremap    <S-F4> :<C-U>cprevious <CR>
-
 "   [F5]    make
 "[Shift-F5] make (but wait for arguments)
-"
 nnoremap    <F5>   :<C-U>make<CR>
 nnoremap    <S-F5> :<C-U>make<space>
-
 "   [F6]    Break a line and right-align it
-"
 nnoremap    <F6> <Esc>i<CR><Esc>:ri <CR>
-
-"   [F7]    Toggle Vim v7.0 Spell-Checking {{{
+"   [F7]    Toggle Vim v7.0 Spell-Checking
 if v:version >= 700
-    set spelllang=en_au nospell
     nnoremap <F7> :<C-U>set spell! spell?<CR>
 endif
-"""" }}}
-
 "   [F8]    Diff with version control plug-in
 nnoremap    <F8> :<C-U>VCSVimDiff <CR>
-"""" }}}
 
 " Comments are lies (exception that proves the rule).
 nnoremap <Leader>ic :<C-U>highlight! link Comment Ignore<CR>
@@ -230,19 +196,13 @@ nnoremap <Leader>sc :<C-U>highlight! Comment ctermfg=14 guifg=#80a0ff<CR>
 "    \1      git: show first commit where term under cursor was added:
 nnoremap <Leader>1 :!git log --reverse -p -S<cword> %<CR>
 
-let c_no_curly_error=1
-
-if executable('clang++')
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_cpp_compiler = 'clang++'
-    let g:syntastic_cpp_compiler_options = ' -std=c++11 --analyze '
-    if has('multi_byte')
-        let g:syntastic_error_symbol='✗'
-        let g:syntastic_warning_symbol='⚠'
-    else
-        let g:syntastic_error_symbol='X'
-        let g:syntastic_warning_symbol='>'
-    endif
+let g:syntastic_check_on_open = 1
+if has('multi_byte')
+    let g:syntastic_error_symbol='✗'
+    let g:syntastic_warning_symbol='⚠'
+else
+    let g:syntastic_error_symbol='X'
+    let g:syntastic_warning_symbol='>'
 endif
 
 let g:snips_author = 'Pete Johns'
