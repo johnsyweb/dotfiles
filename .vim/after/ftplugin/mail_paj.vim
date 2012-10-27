@@ -1,6 +1,3 @@
-""""    I like to keep my mails at 65 chars wide.
-setlocal textwidth=65 formatoptions=tcrq
-
 if getline(1) =~ "^On "
     """"    Remove all trailing spaces from lines.
     silent %s/\s\+$//e
@@ -18,9 +15,6 @@ if getline(1) =~ "^On "
     silent %s/^\(>\)\_s\(\1\{2,}\)/\2/ge
     silent %s/^\(>\)\_s\(\1\{1,}\)/\1\2/ge
 
-
-    """"    Remove Blank Lines before singly-quoted blocks...
-    "silent %s/^\_s\{-}\([|>][^|>]\)/\1/e
 
     """"    Remove email addresses...
     "   Outlook ones can go entirely...

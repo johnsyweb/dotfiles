@@ -190,13 +190,6 @@ set   verbose=0
 ""autocmd VimEnter * set vb t_vb=
 """"}}}
 
-"""" AUTOCMDS -- MAIL    {{{
-augroup Mail
-    autocmd FileType mail   set textwidth=65
-    autocmd FileType mail   set formatoptions=tcrq
-augroup END
-""""}}}
-
 """" AUTOCMDS -- Web {{{
 autocmd BufEnter,BufRead *w3m*  set filetype=html
 autocmd FileType html set textwidth=80
@@ -217,9 +210,8 @@ autocmd BufEnter,BufRead *.cf,*.rules,*.tmpl  set tabstop=8
 autocmd BufEnter,BufRead *sqsh-edit* set filetype=sql
 
 """" KEY MAPPINGS -- GENERAL {{{
-nnoremap <Leader>e :%s/\(\[\|<\)\(mailto:\|SMTP:\)*[A-Za-z0-9_\-\.]*@[A-Za-z0-9_\-\.]*\(\]\|>\)//ge<CR>
-nnoremap <Leader>E :%s/\([A-Za-z0-9_\.]*@[A-Za-z0-9_\-\.]\)[A-Za-z0-9_\-\.]*/\1.../ge<CR>
-nnoremap <Leader>q :%s/^[> ^I]*//<CR>
+nnoremap <Leader>rls :%s/^\s\+//e<CR>
+nnoremap <Leader>rts :%s/\s\+$//e<CR>
 nnoremap <Leader>date a<CR>=strftime("%Y%m%d")<CR><Esc>
 nnoremap <Leader>time a<CR>=strftime("%H:%M")<CR><Esc>
 nnoremap <Leader>stamp a<CR>=strftime("%Y%m%d%H%M%S")<CR><Esc>
@@ -235,50 +227,6 @@ nnoremap <Leader>C :s}/* \(.*\) */ /* ${LOGNAME} */}\1/<CR>
 
 """" KEY MAPPINGS -- COMMAND LINE {{{
 cabb W w
-""""}}}
-
-
-"""" KEY MAPPINGS -- MAIL + NEWS {{{
-" ',S' deletes the signature.
-nnoremap <Leader>S :%s/^>*-- \(\n.*\)\{\}//e<CR>
-""""}}}
-
-" ',+' -- pass the whole document thru "par"
-nnoremap <Leader>+ {:1,$!par w72 }
-
-" ',s' postpend my official signature to the document.
-nnoremap <Leader>s mq:$<CR>o<CR>--paj<CR>-- <Esc>:r!sigline.py<CR>`q
-
-" This one's great! [Re-written, by paj]
-"   (a) Remove all leading spaces from lines.
-nnoremap <Leader>rls :%s/^\s\+//e<CR>
-"   (b) Remove all trailing spaces from lines.
-nnoremap <Leader>rts :%s/\s\+$//e<CR>
-"   (c) Replace '> ' with '>' -- that's my indent style.
-nnoremap <Leader>>>  :%s/>\s\+/>/e<CR>
-"   (d) Use Vim  to reformat the paragraphs.
-nnoremap <Leader>par  mqgggqG`q<CR>
-"   (e) Prepend '>' to every line.
-nnoremap <Leader>ad> :%s/^/>/e<CR>
-"   (f) Remove multiple lines consisting solely of '>'s.
-nnoremap <Leader>c>  :%s/\(^>\s*\n\)\{2,\}//ge<CR>
-"   (g) Remove all lines consisting solely of multiple '>'s.
-nnoremap <Leader>rm>  :%s/^>\{2,\}\s*\n//ge<CR>
-"   (h) Remove all lines beginning with 4 or more '>'s.
-nnoremap <Leader>r4> :%s/^>\{4,\}.*\n//ge<CR>
-"   (i) Add a blank line at the end of quoted paragraphs.
-nnoremap <Leader>abl :%s/^>\s*$/>\r/ge<CR>
-"   All of the above and move to end of first block
-nnoremap <Leader>==  ,rls,rts,>>,par,ad>,c>,rm>,r4>,ablgg0}:noh<CR>
-"   Same as the previous one, apart from no prepending of '>' [e].
-nnoremap <Leader>**  ,rls,rts,>>,par,c>,rm>,r4>,ablgg0}:noh<CR>
-
-" 2005-08-17 paj adds some bonus functionality: Remove email addresses, remove
-"                signatures, format email, add my sig.
-inoremap <Leader>fm <Esc><Leader>E<Leader>S<Leader>**<Leader>s i
-nnoremap <Leader>fm <Leader>E<Leader>S<Leader>**<Leader>s
-
-"""" EXTENSIONS (heh) {{{
 """"}}}
 
 if filereadable(expand("hints"))
@@ -316,17 +264,6 @@ catch
     colorscheme desert
 endtry
 
-"TODO: This will go elsewhere:
-highlight default mailQuoted1   ctermfg=DarkRed        guifg=Red
-highlight default mailQuoted2   ctermfg=DarkCyan       guifg=Cyan
-highlight default mailQuoted5   ctermfg=DarkMagenta    guifg=Magenta
-highlight default link mailEmail     Identifier
-highlight default link mailURL       Underlined
-highlight default link mailSubject   SpecialKey
-highlight default link mailSignature Type
-""""}}}
-
-"This should probably be in a separate file, but I shall leave it here for now:
 syntax match Italic /\<paj\>/
 syntax match Smiley /[8:;][-*o][(){}\[\]\/\\|p]/
 match ErrorMsg /\s\+$/
