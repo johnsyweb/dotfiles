@@ -117,27 +117,12 @@ let use_xhtml=1
 
 let g:xml_syntax_folding = 1
 
-"""" If we're in a colour terminal (or this is the GUI version), turn on syntax. {{{
-if (&t_Co > 1 ) || has("gui_running")
+if (&t_Co > 1)
     syntax on
     if (&t_Co >= 256)
         let g:solarized_termcolors=256
     endif
 endif
-""""}}}
-
-"""" You could put this in .gvimrc, but I like having just the one file to move {{{
-"""" from server to server.
-if has("gui_running")
-    set guicursor=a:blinkon0
-    set guioptions=bgmprT
-
-    if exists(":winpos") == 2
-        winpos 0 0
-    endif
-    set lines=50 columns=80
-endif
-""""}}}
 
 """" 20060318 using PSCP on Windows. N.B: Works best with Pageant. {{{
 if ($OS =~"Windows")
@@ -145,20 +130,8 @@ if ($OS =~"Windows")
 endif
 """"}}}
 
-"""" GUI OPTIONS -- MENUS {{{
-amenu &PAJ.Edit\ _&vimrc              :edit $MYVIMRC<CR>
-amenu &PAJ.Convert\ &TABs\ to\ spaces :%s/<TAB>/    /g<CR>
-amenu &PAJ.Set\ DOS\ text\ format     :set fileformat=dos<CR>
-amenu &PAJ.Set\ UNIX\ text\ format    :set fileformat=unix<CR>
-amenu &PAJ.Strip\ \quotes\            :%s/> *//g<CR>
-amenu &PAJ.Strip\ trailing\ spaces    :%s/[ <TAB>]\+$//g<CR>
-amenu &PAJ.Strip\ leading\ spaces     :%s/^\ \+//g<CR>
-amenu &PAJ.Shrink\ white\ space       :%s/\ \+/ /g<CR>
-""""}}}
-
-
 """" AUTOCMDS -- TESTING {{{
-set   verbose=0
+set verbose=0
 """"}}}
 
 """" AUTOCMDS -- GLOBAL {{{
