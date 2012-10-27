@@ -1,8 +1,3 @@
-" Vim filetype plugin file
-" Language:     Java
-" Maintainer:   Pete Johns <paj-vim@johnsy.com>
-" Last Change:  4 January 2011
-" URL:          https://github.com/johnsyweb/dotfiles/blob/master/.vim/ftplugin/java.vim
 " Notes:        http://vimgolf.com/challenges/4d22dcfa7f75b01e0700010e
 "               vG\aaZZ
 "               Par 7!
@@ -19,5 +14,8 @@ function! AddAccessors()
         silent norm =ap
     endif
 endfunction
-nmap <buffer> <leader>aa :call AddAccessors()<CR>
-vmap <buffer> <leader>aa :call AddAccessors()<CR>
+nnoremap <buffer> <leader>aa :call AddAccessors()<CR>
+vnoremap <buffer> <leader>aa :call AddAccessors()<CR>
+
+set errorformat=\"%f\"\\\,\ line\ %l.%c:%m\,\ %f:%l:%m
+

@@ -128,10 +128,6 @@ if ($OS =~"Windows")
     let g:netrw_scp_cmd="\"c:\\Program Files\\PuTTY\\pscp.exe\" -q"
 endif
 
-"""" AUTOCMDS -- SOURCE CODE -- JAVA {{{
-autocmd BufEnter,BufRead *.java  set errorformat=\"%f\"\\\,\ line\ %l.%c:%m\,\ %f:%l:%m
-""""}}}
-
 """" AUTOCMDS -- CONFIGURATION FILES {{{
 autocmd BufEnter,BufRead *.cf,*.rules,*.tmpl  set tabstop=8
 """"}}}
