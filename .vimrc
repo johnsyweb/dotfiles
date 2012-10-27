@@ -124,28 +124,9 @@ if (&t_Co > 1)
     endif
 endif
 
-"""" 20060318 using PSCP on Windows. N.B: Works best with Pageant. {{{
 if ($OS =~"Windows")
     let g:netrw_scp_cmd="\"c:\\Program Files\\PuTTY\\pscp.exe\" -q"
 endif
-""""}}}
-
-"""" AUTOCMDS -- TESTING {{{
-set verbose=0
-""""}}}
-
-"""" AUTOCMDS -- GLOBAL {{{
-""autocmd VimEnter * set vb t_vb=
-""""}}}
-
-"""" AUTOCMDS -- Web {{{
-autocmd BufEnter,BufRead *w3m*  set filetype=html
-autocmd FileType html set textwidth=80
-autocmd FileType html set formatoptions=tcrq
-" This is the magic for making a backup of what I enter into a <textarea>...
-autocmd BufWrite,BufLeave *w3m*  execute "write! ".expand("<afile>").".backup"
-""""}}}
-
 
 """" AUTOCMDS -- SOURCE CODE -- JAVA {{{
 autocmd BufEnter,BufRead *.java  set errorformat=\"%f\"\\\,\ line\ %l.%c:%m\,\ %f:%l:%m
