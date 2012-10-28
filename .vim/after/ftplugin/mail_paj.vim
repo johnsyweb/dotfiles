@@ -44,3 +44,5 @@ silent normal 'a
 
 nohls
 
+highlight! link mailQuoted1 DiffDelete
+highlight! link mailQuoted2 DiffAdd
