@@ -38,8 +38,10 @@ map <Esc>[33~  <S-F9>
 map <Esc>[34~  <S-F10>
 """" And sometimes on my Mac, too...
 if has('multi_byte')
-    imap       <BS>
-    cmap       <BS>
+    try
+        imap       <BS>
+        cmap       <BS>
+    endtry
 endif
 
 """" Handy keys on the command-line from, ahem, some other system...
@@ -80,7 +82,10 @@ set   matchtime=2
 set   mousehide
 set   mousemodel=popup_setpos
 if has('multi_byte')
-    set showbreak=↪
+    try
+        set showbreak=↪
+    catch
+    endtry
 endif
 set   showcmd
 if has('spell')
@@ -142,13 +147,16 @@ nnoremap <Leader>vimrc :e $MYVIMRC<CR>
 cabb W w
 
 if has('multi_byte')
-    abbreviate (snowman) ☃
-    abbreviate -->      →
-    abbreviate :-(      ☹
-    abbreviate :-)      ☺
-    abbreviate <--      ←
-    abbreviate <==      ⇐
-    abbreviate ==>      ⇒
+    try
+        abbreviate (snowman) ☃
+        abbreviate -->      →
+        abbreviate :-(      ☹
+        abbreviate :-)      ☺
+        abbreviate <--      ←
+        abbreviate <==      ⇐
+        abbreviate ==>      ⇒
+    catch
+    endtry
 endif
 abbreviate JOhns    Johns
 abbreviate adn      and
@@ -197,12 +205,14 @@ nnoremap <Leader>sc :<C-U>highlight! Comment ctermfg=14 guifg=#80a0ff<CR>
 nnoremap <Leader>1 :!git log --reverse -p -S<cword> %<CR>
 
 let g:syntastic_check_on_open = 1
+let g:syntastic_error_symbol='X'
+let g:syntastic_warning_symbol='>'
 if has('multi_byte')
-    let g:syntastic_error_symbol='✗'
-    let g:syntastic_warning_symbol='⚠'
-else
-    let g:syntastic_error_symbol='X'
-    let g:syntastic_warning_symbol='>'
+    try
+        let g:syntastic_error_symbol='✗'
+        let g:syntastic_warning_symbol='⚠'
+    catch
+    endtry
 endif
 
 let g:snips_author = 'Pete Johns'
