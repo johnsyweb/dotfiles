@@ -17,6 +17,7 @@
 [color]
     ui = auto
 [core]
+    autocrlf = input
     excludesfile = ~/dotfiles/git-global-ignore
     pager = less -+$LESS -FRX
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
