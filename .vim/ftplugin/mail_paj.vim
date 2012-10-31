@@ -1,4 +1,4 @@
-setlocal textwidth=66
+setlocal textwidth=65
 
 nnoremap <Leader>e :%s/\(\[\|<\)\(mailto:\|SMTP:\)*[A-Za-z0-9_\-\.]*@[A-Za-z0-9_\-\.]*\(\]\|>\)//ge<CR>
 nnoremap <Leader>E :%s/\([A-Za-z0-9_\.]*@[A-Za-z0-9_\-\.]\)[A-Za-z0-9_\-\.]*/\1.../ge<CR>
