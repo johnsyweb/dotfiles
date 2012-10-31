@@ -1,5 +1,3 @@
-" A Vim filetype plugin to set up PyUnit as the 'compiler' for python files.
-
 function! UsePyUnit()
     " This sets up the errorformat...
     compiler pyunit
@@ -29,12 +27,6 @@ iabbr <buffer> saf self.assertFalse
 iabbr <buffer> san self.assertNotEquals
 iabbr <buffer> sar self.assertRaises
 iabbr <buffer> sat self.assertTrue
-
-" In Python, indentation is four spaces.
-" A tab character is always eight spaces.
-setlocal tabstop=8 softtabstop=4 shiftwidth=4 textwidth=80 smarttab expandtab smartindent
-setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except,0#
-setlocal keywordprg=pydoc
 
 function! GetClassNameFromLine(line_number)
     let l:class_regex = 'class\s\+\zs\i\+'
@@ -96,9 +88,16 @@ function! GetLastClassWrapper()
     return l:retval
 endfunction
 
-setlocal statusline=[%n]\ %{GetLastClassWrapper()}\ %<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
-
+setlocal expandtab
+setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except,0#
 setlocal keywordprg=pydoc
+setlocal shiftwidth=4
+setlocal smartindent
+setlocal smarttab
+setlocal softtabstop=4
+setlocal statusline=[%n]\ %{GetLastClassWrapper()}\ %<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
+setlocal tabstop=8
+setlocal textwidth=79
 
 " Tip 1546: Automatically add Python paths to Vim path
 if has('python')
