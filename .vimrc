@@ -137,6 +137,7 @@ if ($OS =~"Windows")
     let g:netrw_scp_cmd="\"c:\\Program Files\\PuTTY\\pscp.exe\" -q"
 endif
 
+nnoremap <Leader>/ :<C-U>nohlsearch<CR>
 nnoremap <Leader>rls :%s/^\s\+//e<CR>
 nnoremap <Leader>rts :%s/\s\+$//e<CR>
 nnoremap <Leader>date a<CR>=strftime("%Y%m%d")<CR><Esc>
