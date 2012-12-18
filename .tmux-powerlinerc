@@ -3,7 +3,7 @@
 # General {
 	export TMUX_POWERLINE_DEBUG_MODE_ENABLED="true"
 	export TMUX_POWERLINE_PATCHED_FONT_IN_USE="false"
-	export TMUX_POWERLINE_THEME="with_mbox"
+	export TMUX_POWERLINE_THEME="default"
 # }
 
 # battery.sh {
@@ -11,6 +11,11 @@
 	export TMUX_POWERLINE_SEG_BATTERY_TYPE="percentage"
 	# How may hearts to show if cute indicators are used.
 	export TMUX_POWERLINE_SEG_BATTERY_NUM_HEARTS="5"
+# }
+
+# mail_count.sh {
+	# Mailbox type to use. Can be any of { apple_mail, gmail, maildir, mbox }
+	export TMUX_POWERLINE_SEG_MAIL_COUNT_MAILBOX_TYPE="apple_mail"
 # }
 
 # mail_count_gmail.sh {
@@ -29,14 +34,14 @@
 	export TMUX_POWERLINE_SEG_MAILCOUNT_GMAIL_INTERVAL="5"
 # }
 
-# mail_count_mbox.sh {
-	# Path to the mbox to check.
-	export TMUX_POWERLINE_SEG_MAILCOUNT_MBOX_INBOX="${HOME}/Mail/inbox"
-# }
-
 # mail_count_maildir.sh {
 	# Path to the maildir to check.
 	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILDIR_INBOX="/Users/paj/.mail/inbox/new"
+# }
+
+# mail_count_mbox.sh {
+	# Path to the mbox to check.
+	export TMUX_POWERLINE_SEG_MAILCOUNT_MBOX_INBOX="${HOME}/Mail/inbox"
 # }
 
 # now_playing.sh {
