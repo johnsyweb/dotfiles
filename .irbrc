@@ -5,4 +5,5 @@ begin
     Wirble.colorize
 rescue LoadError => err
     warn "Couldn't load Wirble: #{err}"
+    require 'irb/completion'
 end
