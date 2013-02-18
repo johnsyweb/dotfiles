@@ -1,5 +1,6 @@
 compiler rspec
 setlocal expandtab
+setlocal foldmethod=manual
 setlocal keywordprg=ri
 setlocal makeprg=rspec\ %
 setlocal shiftwidth=2
