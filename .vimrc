@@ -195,8 +195,7 @@ nnoremap    <F6> <Esc>i<CR><Esc>:ri <CR>
 if v:version >= 700
     nnoremap <F7> :<C-U>set spell! spell?<CR>
 endif
-"   [F8]    Diff with version control plug-in
-nnoremap    <F8> :<C-U>VCSVimDiff <CR>
+nnoremap <silent> <F8> :TlistToggle<CR>
 
 " Comments are lies (exception that proves the rule).
 nnoremap <Leader>ic :<C-U>highlight! link Comment Ignore<CR>
