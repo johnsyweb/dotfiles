@@ -1,0 +1,75 @@
+[submodule ".vim/bundle/jasmine.vim"]
+	path = .vim/bundle/jasmine.vim
+	url = git://github.com/claco/jasmine.vim.git
+[submodule ".vim/bundle/bufexplorer"]
+	path = .vim/bundle/bufexplorer
+	url = git://github.com/cperl82/bufexplorer.git
+[submodule ".vim/bundle/vim-coffee-script"]
+	path = .vim/bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule ".vim/bundle/vim-jslint"]
+	path = .vim/bundle/vim-jslint
+	url = git://github.com/krisajenkins/vim-jslint.git
+[submodule ".vim/bundle/vim-pipe"]
+	path = .vim/bundle/vim-pipe
+	url = git://github.com/krisajenkins/vim-pipe.git
+[submodule ".vim/bundle/snipmate.vim"]
+	path = .vim/bundle/snipmate.vim
+	url = git://github.com/msanders/snipmate.vim.git
+[submodule ".vim/bundle/golden-ratio"]
+	path = .vim/bundle/golden-ratio
+	url = git://github.com/roman/golden-ratio.git
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule ".vim/bundle/fitnesse.vim"]
+	path = .vim/bundle/fitnesse.vim
+	url = git://github.com/vim-scripts/fitnesse.vim.git
+[submodule ".vim/bundle/solarized"]
+	path = .vim/bundle/solarized
+	url = git@github.com:altercation/solarized.git
+[submodule ".vim/bundle/vim-colors-solarized"]
+	path = .vim/bundle/vim-colors-solarized
+	url = git@github.com:johnsyweb/vim-colors-solarized.git
+[submodule ".vim/bundle/vim-makeshift"]
+	path = .vim/bundle/vim-makeshift
+	url = git@github.com:johnsyweb/vim-makeshift.git
+[submodule ".vim/bundle/vim-tut"]
+	path = .vim/bundle/vim-tut
+	url = git@github.com:johnsyweb/vim-tut.git
+[submodule ".vim/bundle/vim-rails"]
+	path = .vim/bundle/vim-rails
+	url = git@github.com:tpope/vim-rails.git
+[submodule ".vim/bundle/VCard-syntax"]
+	path = .vim/bundle/VCard-syntax
+	url = git@github.com:vim-scripts/VCard-syntax.git
+[submodule ".vim/bundle/dbext.vim"]
+	path = .vim/bundle/dbext.vim
+	url = git@github.com:vim-scripts/dbext.vim.git
+[submodule ".vim/bundle/taglist.vim"]
+	path = .vim/bundle/taglist.vim
+	url = git@github.com:vim-scripts/taglist.vim.git
+[submodule ".vim/bundle/clang_complete"]
+	path = .vim/bundle/clang_complete
+	url = https://github.com/Rip-Rip/clang_complete
+[submodule ".vim/bundle/vim-python-pep8-indent"]
+	path = .vim/bundle/vim-python-pep8-indent
+	url = https://github.com/hynek/vim-python-pep8-indent.git
+[submodule ".vim/bundle/vim-golang"]
+	path = .vim/bundle/vim-golang
+	url = https://github.com/jnwhiteh/vim-golang
+[submodule ".vim/bundle/ctrlp.vim"]
+	path = .vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/puppet-syntax-vim"]
+	path = .vim/bundle/puppet-syntax-vim
+	url = https://github.com/puppetlabs/puppet-syntax-vim.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
