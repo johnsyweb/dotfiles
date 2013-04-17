@@ -163,6 +163,7 @@ abbreviate JOhns    Johns
 abbreviate adn      and
 abbreviate flase    false
 abbreviate teh      the
+abbreviate whre where
 
 call pathogen#infect()
 
@@ -217,3 +218,4 @@ endif
 
 let g:snips_author = 'Pete Johns'
 
+inoremap jk <Esc>
