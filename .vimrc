@@ -185,18 +185,24 @@ function! ToggleWhitespace()
     endif
 endfunction
 
+function! RunMake()
+    if exists(':Rake')
+        update
+        Rake 
+    else
+        make
+    endif
+endfunction
+
 "   [F1]    :help. Built-in.
-nnoremap    <F2> :call ToggleWhitespace()<CR>
+nnoremap <F2> :call ToggleWhitespace()<CR>
 "   [F3]    toggles between (header, ) source and test files.
 nnoremap    <F3> :<C-U>TUT<CR>
 "   [F4]    Go to next quick-fix
 "[Shift-F4] Go to previous quick-fix
 noremap    <F4>   :<C-U>cnext <CR>
 noremap    <S-F4> :<C-U>cprevious <CR>
-"   [F5]    make
-"[Shift-F5] make (but wait for arguments)
-nnoremap    <F5>   :<C-U>make<CR>
-nnoremap    <S-F5> :<C-U>make<space>
+nnoremap <F5> :call RunMake()<CR>
 "   [F6]    Break a line and right-align it
 nnoremap    <F6> <Esc>i<CR><Esc>:ri <CR>
 "   [F7]    Toggle Vim v7.0 Spell-Checking
