@@ -1,16 +1,16 @@
-begin
-    require 'wirble'
+gems = %w(rubygems interactive_editor hirb wirble)
 
-    Wirble.init
-    Wirble.colorize
-rescue LoadError => err
-    warn "Couldn't load Wirble: #{err}"
-    require 'irb/completion'
+gems.each do |gem|
+  begin
+    require gem
+  rescue LoadError => err
+    warn "Couldn't load #{gem} #{err}"
+  end
 end
 
 begin
-  require 'rubygems'
-  require 'interactive_editor'
-rescue LoadError => err
-  warn "Couldn't load interactive_editor: #{err}"
+    Wirble.init
+    Wirble.colorize
+rescue NameError => err
+    require 'irb/completion'
 end
