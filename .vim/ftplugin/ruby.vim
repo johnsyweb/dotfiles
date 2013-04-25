@@ -1,4 +1,3 @@
-compiler rspec
 setlocal expandtab
 setlocal foldmethod=manual
 setlocal iskeyword+=!,?,=,:
