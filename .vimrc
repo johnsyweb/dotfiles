@@ -203,6 +203,7 @@ nnoremap    <F3> :<C-U>TUT<CR>
 noremap    <F4>   :<C-U>cnext <CR>
 noremap    <S-F4> :<C-U>cprevious <CR>
 nnoremap <F5> :call RunMake()<CR>
+inoremap <F5> <Esc>:call RunMake()<CR>
 "   [F6]    Break a line and right-align it
 nnoremap    <F6> <Esc>i<CR><Esc>:ri <CR>
 "   [F7]    Toggle Vim v7.0 Spell-Checking
@@ -233,5 +234,5 @@ let g:snips_author = 'Pete Johns'
 
 let g:loaded_makeshift=1
 
-inoremap jk <Esc> :write<CR>
-nnoremap jk :write<CR>
+inoremap jk <Esc>:update<CR>
+nnoremap jk :update<CR>
