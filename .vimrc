@@ -175,11 +175,18 @@ endtry
 
 syntax match Italic /\<paj\>/
 syntax match Smiley /[8:;][-*o][(){}\[\]\/\\|p]/
-match ErrorMsg /\s\+$/
+
+function! ToggleWhitespace()
+    setlocal lcs=tab:>-,trail:-,eol:$ list! list?
+    if &list
+        match ErrorMsg /\s\+$/
+    else
+        match none
+    endif
+endfunction
 
 "   [F1]    :help. Built-in.
-"   [F2]    shows and hides whitespace.
-nnoremap    <F2> :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list?<CR>
+nnoremap    <F2> :call ToggleWhitespace()<CR>
 "   [F3]    toggles between (header, ) source and test files.
 nnoremap    <F3> :<C-U>TUT<CR>
 "   [F4]    Go to next quick-fix
@@ -205,7 +212,7 @@ nnoremap <Leader>sc :<C-U>highlight! Comment ctermfg=14 guifg=#80a0ff<CR>
 "    \1      git: show first commit where term under cursor was added:
 nnoremap <Leader>1 :!git log --reverse -p -S<cword> %<CR>
 
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open=0
 let g:syntastic_error_symbol='X'
 let g:syntastic_warning_symbol='>'
 if has('multi_byte')
@@ -218,4 +225,5 @@ endif
 
 let g:snips_author = 'Pete Johns'
 
-inoremap jk <Esc>
+inoremap jk <Esc> :write<CR>
+nnoremap jk :write<CR>
