@@ -225,5 +225,7 @@ endif
 
 let g:snips_author = 'Pete Johns'
 
+let g:loaded_makeshift=1
+
 inoremap jk <Esc> :write<CR>
 nnoremap jk :write<CR>
