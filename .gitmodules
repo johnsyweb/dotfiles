@@ -79,3 +79,6 @@
 [submodule ".vim/bundle/vim-bundler"]
 	path = .vim/bundle/vim-bundler
 	url = git@github.com:tpope/vim-bundler.git
+[submodule ".vim/bundle/xmledit"]
+	path = .vim/bundle/xmledit
+	url = git@github.com:sukima/xmledit.git
