@@ -165,6 +165,8 @@ abbreviate flase    false
 abbreviate teh      the
 abbreviate whre where
 
+let g:loaded_makeshift=1
+
 call pathogen#infect()
 
 try
@@ -231,8 +233,6 @@ if has('multi_byte')
 endif
 
 let g:snips_author = 'Pete Johns'
-
-let g:loaded_makeshift=1
 
 inoremap jk <Esc>:update<CR>
 nnoremap jk :update<CR>
