@@ -15,7 +15,11 @@
 
 # mail_count.sh {
 	# Mailbox type to use. Can be any of { apple_mail, gmail, maildir, mbox }
-	export TMUX_POWERLINE_SEG_MAIL_COUNT_MAILBOX_TYPE="apple_mail"
+        if [[ $(uname) = 'Darwin' ]]; then
+            export TMUX_POWERLINE_SEG_MAIL_COUNT_MAILBOX_TYPE="apple_mail"
+        else
+            export TMUX_POWERLINE_SEG_MAIL_COUNT_MAILBOX_TYPE="mbox"
+        fi
 # }
 
 # mail_count_gmail.sh {
