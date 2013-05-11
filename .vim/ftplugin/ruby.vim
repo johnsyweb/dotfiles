@@ -1,6 +1,6 @@
 setlocal expandtab
 setlocal foldmethod=manual
-setlocal iskeyword+=!,?,=,:
+setlocal iskeyword+=!,?,=
 setlocal keywordprg=ri
 setlocal shiftwidth=2
 setlocal smartindent
