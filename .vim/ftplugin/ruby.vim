@@ -9,6 +9,8 @@ setlocal softtabstop=2
 setlocal tabstop=8
 setlocal textwidth=79
 
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+
 function! s:IsConfigFile(filename)
   return match(a:filename, "/config/") > 1
 endfunction
