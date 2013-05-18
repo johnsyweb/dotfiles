@@ -104,9 +104,14 @@ set   showfulltag
 set   showmatch
 set   smartindent
 set   smarttab
-set   statusline=[%n]\ %<%f%h%m\ %{fugitive#statusline()}
+set   statusline=[%n]\ %<%f%h%m
+if exists('fugitive#statusline')
+    set statusline+=\ %{fugitive#statusline()}
+endif
 set   statusline+=\ %#warningmsg#
-set   statusline+=%{SyntasticStatuslineFlag()}
+if exists('SyntasticStatuslineFlag')
+    set statusline+=%{SyntasticStatuslineFlag()}
+endif
 set   statusline+=%*
 set   statusline+=\ %r%=%b\ 0x%B\ \ %l,%c%V\ %P
 set   tags+=$WKSPACE/tags,$WKSPACE/src/tags
@@ -166,7 +171,6 @@ abbreviate teh      the
 abbreviate whre where
 
 let g:loaded_makeshift=1
-
 call pathogen#infect()
 
 try
