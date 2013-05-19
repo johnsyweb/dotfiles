@@ -170,7 +170,6 @@ abbreviate flase    false
 abbreviate teh      the
 abbreviate whre where
 
-let g:loaded_makeshift=1
 call pathogen#infect()
 
 try
