@@ -32,4 +32,4 @@
 [merge]
 	tool=vimdiff
 [push]
-	default = matching
+	default = current
