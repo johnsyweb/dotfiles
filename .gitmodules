@@ -100,3 +100,6 @@
 [submodule ".vim/bundle/rainbow_parentheses.vim"]
 	path = .vim/bundle/rainbow_parentheses.vim
 	url = https://github.com/kien/rainbow_parentheses.vim
+[submodule ".vim/bundle/SingleCompile"]
+	path = .vim/bundle/SingleCompile
+	url = git@github.com:xuhdev/SingleCompile.git
