@@ -263,7 +263,9 @@ let g:snips_author = 'Pete Johns'
 inoremap jk <Esc>:update<CR>
 nnoremap jk :update<CR>
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+if exists('RainbowParenthesesToggle')
+    au VimEnter * RainbowParenthesesToggle
+    au Syntax * RainbowParenthesesLoadRound
+    au Syntax * RainbowParenthesesLoadSquare
+    au Syntax * RainbowParenthesesLoadBraces
+end
