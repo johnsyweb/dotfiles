@@ -141,6 +141,7 @@ endif
 if ($OS =~"Windows")
     let g:netrw_scp_cmd="\"c:\\Program Files\\PuTTY\\pscp.exe\" -q"
 endif
+let g:netrw_browsex_viewer='open'
 
 nnoremap <Leader>/ :<C-U>nohlsearch<CR>
 nnoremap <Leader>rls :%s/^\s\+//e<CR>
