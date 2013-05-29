@@ -7,6 +7,7 @@ plugins=(
     brew
     bundler
     capistrano
+    color-ssh
     cpanm
     gem
     git
@@ -19,7 +20,7 @@ plugins=(
     rails3
     rake
     rbenv
-    redis
+    redis-cli
     ssh-agent
     svn
     terminalapp
