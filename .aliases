@@ -1,0 +1,13 @@
+# vim: ft=zsh
+
+case $(uname) in
+    Linux)
+    alias ls='ls --color=auto -aGFl'
+    ;;
+SunOS)
+    alias ls='ls -aFl'
+    ;;
+*)
+    alias ls='ls -aFGl'
+    ;;
+esac
