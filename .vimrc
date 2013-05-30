@@ -171,7 +171,6 @@ abbreviate flase    false
 abbreviate teh      the
 abbreviate whre where
 
-let g:loaded_makeshift=1
 let g:rbpt_colorpairs = [
             \ ['brown',       'RoyalBlue3'],
             \ ['Darkblue',    'SeaGreen3'],
