@@ -1,5 +1,5 @@
 ZSH=${HOME}/.oh-my-zsh
-ZSH_THEME="robbyrussell"
+
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(
@@ -58,3 +58,6 @@ setopt rcexpandparam
 setopt shoptionletters
 setopt zle
 
+autoload -U promptinit
+promptinit
+prompt clint
