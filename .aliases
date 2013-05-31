@@ -11,3 +11,4 @@ SunOS)
     alias ls='ls -aFGl'
     ;;
 esac
+alias m='mutt'
