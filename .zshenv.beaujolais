@@ -1,0 +1,6 @@
+preferred_locale='en_AU.UTF-8'
+unset LANG
+if [[ -d "/usr/share/locale/${preferred_locale}" || -d "/usr/lib/locale/${preferred_locale}" ]]; then
+    export LC_ALL=${preferred_locale}
+fi
+export PATH=${HOME}/pajenv/bin:${PATH}
