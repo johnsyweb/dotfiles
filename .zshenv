@@ -3,8 +3,8 @@ export EDITOR="vim"
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 export LESS="-FMRX"
 export LESSOPEN="|lesspipe.sh %s"
+export PATH=${HOME}/.rbenv/bin:/usr/local/bin:${PATH}
 export PATH=${PATH}:${EC2_HOME}/bin
-export PATH=/usr/local/bin:${PATH}:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 export TEMP="${HOME}/tmp"
 export VISUAL="${EDITOR}"
 if [[ -r ${HOME}/.zshenv.${HOST%%.*} ]]; then

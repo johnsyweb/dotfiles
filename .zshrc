@@ -33,6 +33,7 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 source ${ZSH}/oh-my-zsh.sh
 source ${HOME}/.aliases
 source ${HOME}/.zshenv
+eval "$(rbenv init -)"
 
 setopt nobeep
 setopt braceccl
