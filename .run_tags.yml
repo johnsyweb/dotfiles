@@ -1,4 +1,4 @@
-# Sample configuration for Vim users. Install in ~/.run_tags.yml .
-tags_file: 'tags'
 ctags_flags: ''
-debug: true
+debug: false
+tags_file: 'tags'
+
