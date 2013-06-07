@@ -1,4 +1,4 @@
-gems = %w(rubygems interactive_editor hirb wirble)
+gems = %w(rubygems interactive_editor hirb wirble pry)
 
 gems.each do |gem|
   begin
