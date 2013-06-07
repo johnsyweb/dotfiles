@@ -32,11 +32,6 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 source ${ZSH}/oh-my-zsh.sh
 source ${HOME}/.aliases
-source ${HOME}/.zshenv
-
-if type rbenv &> /dev/null; then
-    eval "$(rbenv init -)"
-fi
 
 setopt nobeep
 setopt braceccl

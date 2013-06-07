@@ -1,3 +1,5 @@
+unsetopt GLOBAL_RCS
+
 export EC2_HOME=${HOME}/.ec2
 export EDITOR="vim"
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
@@ -7,6 +9,11 @@ export PATH=${HOME}/.rbenv/bin:/usr/local/bin:${PATH}
 export PATH=${PATH}:${EC2_HOME}/bin
 export TEMP="${HOME}/tmp"
 export VISUAL="${EDITOR}"
+
+if type rbenv &> /dev/null; then
+    eval "$(rbenv init -)"
+fi
+
 if [[ -r ${HOME}/.zshenv.${HOST%%.*} ]]; then
   . ${HOME}/.zshenv.${HOST%%.*}
 fi
