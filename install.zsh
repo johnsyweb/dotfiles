@@ -2,6 +2,9 @@
 
 set -o EXTENDED_GLOB
 
+git submodule init
+git submodule update
+
 for dotfile in ${PWD}/.^git*; do
     target="${HOME}/${dotfile:t}"
     if [[ -e ${target} ]]; then
@@ -10,9 +13,6 @@ for dotfile in ${PWD}/.^git*; do
         ln -s "${dotfile}" "${target}"
     fi
 done
-
-git submodule init
-git submodule update
 
 vim -cHelptags -cq
 
