@@ -5,8 +5,17 @@ export EDITOR="vim"
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 export LESS="-FMRX"
 export LESSOPEN="|lesspipe.sh %s"
-export PATH=${HOME}/.rbenv/bin:/usr/local/bin:/usr/local/sbin:${PATH}
-export PATH=${PATH}:${EC2_HOME}/bin
+typeset -U path
+path=(
+    ~/.rbenv/bin
+    ~/bin
+    /usr/local/bin
+    /usr/local/sbin
+    /usr/local/share/python
+    $path
+    ${EC2_HOME}/bin
+)
+path=($^path(N-/))
 export TEMP="${HOME}/tmp"
 export VISUAL="${EDITOR}"
 
