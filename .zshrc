@@ -24,6 +24,7 @@ plugins=(
     ssh-agent
     svn
     terminalapp
+    vagrant
     virtualenv
     zeus
 )
