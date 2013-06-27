@@ -121,3 +121,6 @@
 [submodule ".vim/bundle/nginx-vim-syntax"]
 	path = .vim/bundle/nginx-vim-syntax
 	url = git@github.com:evanmiller/nginx-vim-syntax.git
+[submodule ".vim/bundle/vim-markdown"]
+	path = .vim/bundle/vim-markdown
+	url = git@github.com:tpope/vim-markdown.git
