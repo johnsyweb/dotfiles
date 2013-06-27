@@ -1,4 +1,6 @@
-gems = %w(rubygems interactive_editor hirb wirble pry)
+# encoding: utf-8
+
+gems = %w(rubygems hirb pry)
 
 gems.each do |gem|
   begin
@@ -8,9 +10,3 @@ gems.each do |gem|
   end
 end
 
-begin
-    Wirble.init
-    Wirble.colorize
-rescue NameError => err
-    require 'irb/completion'
-end
