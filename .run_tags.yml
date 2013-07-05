@@ -1,4 +1,5 @@
+# https://github.com/johnsyweb/run_tags
+tags_file: 'tags'
 ctags_flags: ''
 debug: false
-tags_file: 'tags'
 
