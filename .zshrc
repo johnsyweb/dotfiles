@@ -26,6 +26,7 @@ plugins=(
     terminalapp
     vagrant
     virtualenv
+    virtualenvwrapper
     zeus
 )
 
