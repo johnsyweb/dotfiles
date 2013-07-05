@@ -2,3 +2,4 @@
 .vim/snippets/_.snippets
 .vim/spell/*.add.spl
 .zcompdump
+Gemfile.lock
