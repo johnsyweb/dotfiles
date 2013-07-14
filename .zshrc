@@ -31,7 +31,7 @@ plugins=(
 )
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-
+source ${HOME}/.zshenv
 source ${ZSH}/oh-my-zsh.sh
 source ${HOME}/.aliases
 
