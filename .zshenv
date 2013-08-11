@@ -7,7 +7,7 @@ export LESS="-FMRX"
 export LESSOPEN="|lesspipe.sh %s"
 typeset -U path
 path=(
-    ~/.rbenv/bin
+    ~/.rbenv/shims
     ~/bin
     /usr/local/bin
     /usr/local/sbin
