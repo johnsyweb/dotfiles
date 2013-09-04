@@ -9,7 +9,7 @@
 [MASTER]
 
 # Specify a configuration file.
-#rcfile=
+rcfile=./.pylintrc
 
 # Python code to execute, usually for sys.path manipulation such as
 # pygtk.require().
@@ -53,14 +53,14 @@ load-plugins=
 #enable-msg=
 
 # Disable the message(s) with the given id(s).
-disable-msg=C0111,R0903
+disable-msg=C0111,R0903,W0142,C0103
 
 
 [REPORTS]
 
 # Set the output format. Available formats are text, parseable, colorized, msvs
 # (visual studio) and html
-output-format=text
+output-format=colorized
 
 # Include message's id in output
 include-ids=yes
