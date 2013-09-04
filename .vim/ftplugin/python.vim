@@ -12,7 +12,7 @@ nnoremap <leader>pu :call UsePyUnit()<CR>
 
 function! UsePyLint()
     setlocal efm=%f:%l:\ [%t]%m,%f:%l:%m
-    setlocal makeprg=pylint\ --output-format=parseable\ --reports=n\ %
+    setlocal makeprg=pylint\ --reports=n\ --msg-template='{path}:{line}:\ [{msg_id}({symbol}),\ {obj}]\ {msg}'\ %
     set makeprg?
 endfunction
 nnoremap <leader>pl :call UsePyLint()<CR>
