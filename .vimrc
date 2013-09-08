@@ -259,7 +259,8 @@ endif
 
 let g:snips_author = 'Pete Johns'
 
-inoremap jk <Esc>:update<CR>
+inoremap <Leader>] <Esc>:update<CR>
+nnoremap <Leader>] :update<CR>
 
 if exists('RainbowParenthesesToggle')
     au VimEnter * RainbowParenthesesToggle
