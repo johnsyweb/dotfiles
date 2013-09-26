@@ -33,3 +33,5 @@
 	tool=vimdiff
 [push]
 	default = current
+[github]
+	user = johnsyweb
