@@ -127,3 +127,12 @@
 [submodule ".vim/bundle/vim-sensible"]
 	path = .vim/bundle/vim-sensible
 	url = git@github.com:tpope/vim-sensible.git
+[submodule ".vim/bundle/vim-gnupg"]
+	path = .vim/bundle/vim-gnupg
+	url = https://github.com/jamessan/vim-gnupg
+[submodule ".vim/bundle/TailMinusF"]
+	path = .vim/bundle/TailMinusF
+	url = git@github.com:vim-scripts/TailMinusF.git
+[submodule ".vim/b/vim-abolish"]
+	path = .vim/b/vim-abolish
+	url = git@github.com:tpope/vim-abolish.git
