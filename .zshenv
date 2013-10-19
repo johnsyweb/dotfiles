@@ -23,6 +23,10 @@ if type rbenv &> /dev/null; then
     eval "$(rbenv init -)"
 fi
 
+if [[ -r /opt/boxen/env.sh ]]; then
+    . /opt/boxen/env.sh
+fi
+
 if [[ -r ${HOME}/.zshenv.${HOST%%.*} ]]; then
   . ${HOME}/.zshenv.${HOST%%.*}
 fi
