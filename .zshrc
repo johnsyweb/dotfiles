@@ -35,6 +35,11 @@ source ${HOME}/.zshenv
 source ${ZSH}/oh-my-zsh.sh
 source ${HOME}/.aliases
 
+mcd() {
+    mkdir $1
+    cd $1
+}
+
 setopt nobeep
 setopt braceccl
 setopt noclobber
