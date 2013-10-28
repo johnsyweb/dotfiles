@@ -136,3 +136,9 @@
 [submodule ".vim/b/vim-abolish"]
 	path = .vim/b/vim-abolish
 	url = git@github.com:tpope/vim-abolish.git
+[submodule ".vim/bundle/file-line"]
+	path = .vim/bundle/file-line
+	url = https://github.com/bogado/file-line.git
+[submodule ".vim/bundle/vim-airline"]
+	path = .vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
