@@ -67,3 +67,5 @@ setopt zle
 autoload -U promptinit
 promptinit
 prompt clint
+
+alias bi='bundle install --local'
