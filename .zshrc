@@ -17,7 +17,7 @@ plugins=(
     powder
     profiles
     python
-    rails3
+    rails
     rake
     rbenv
     redis-cli
