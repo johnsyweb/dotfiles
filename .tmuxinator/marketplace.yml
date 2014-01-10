@@ -1,0 +1,12 @@
+project_name: marketplace
+project_root: ~/dev/marketplace/
+socket_path: ~/tmp/tmux-marketplace
+windows:
+  - editor:
+      layout: f98d,230x59,0,0[230x40,0,0,0,230x18,0,41,4]
+      panes:
+        - vim
+        - #empty
+  - server: bundle exec foreman start
+  - logs: tail -f log/development.log
+  - console: bundle exec foreman run rails c
