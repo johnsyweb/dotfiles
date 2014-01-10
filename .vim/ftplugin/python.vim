@@ -98,6 +98,8 @@ setlocal softtabstop=4
 setlocal statusline=[%n]\ %{GetLastClassWrapper()}\ %<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 setlocal tabstop=8
 setlocal textwidth=79
+let g:syntastic_python_checkers = ['python', 'pylint', 'pep8']
+
 
 " Tip 1546: Automatically add Python paths to Vim path
 if has('python')
