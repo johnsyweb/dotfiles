@@ -1,5 +1,4 @@
 --backtrace
 --color
 --fail-fast
---order random
-
+--format d
