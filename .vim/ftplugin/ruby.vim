@@ -31,3 +31,4 @@ endfunction
 
 autocmd! BufWritePost *.rb call s:RestartApp()
 
+inoreabbrev pry! require 'pry'; binding.pry

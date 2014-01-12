@@ -133,9 +133,9 @@
 [submodule ".vim/bundle/TailMinusF"]
 	path = .vim/bundle/TailMinusF
 	url = git@github.com:vim-scripts/TailMinusF.git
-[submodule ".vim/b/vim-abolish"]
-	path = .vim/b/vim-abolish
-	url = git@github.com:tpope/vim-abolish.git
+[submodule ".vim/bundle/vim-abolish"]
+	path = .vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish
 [submodule ".vim/bundle/file-line"]
 	path = .vim/bundle/file-line
 	url = https://github.com/bogado/file-line.git
@@ -145,3 +145,6 @@
 [submodule ".vim/bundle/csv.vim"]
 	path = .vim/bundle/csv.vim
 	url = https://github.com/chrisbra/csv.vim
+[submodule ".vim/bundle/vim-bracketed-paste"]
+	path = .vim/bundle/vim-bracketed-paste
+	url = https://github.com/ConradIrwin/vim-bracketed-paste
