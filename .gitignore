@@ -1,5 +1,5 @@
 .vim/.*
 .vim/snippets/_.snippets
 .vim/spell/*.add.spl
-.zcompdump
+.zcompdump*
 Gemfile.lock
