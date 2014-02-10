@@ -36,12 +36,6 @@ endif
 """"    Go to the beginning of the story...
 normal gg}
 
-""""    Append signature...
-silent normal maG
-silent normal o-- 
-silent r!sigline.py
-silent normal 'a
-
 nohls
 
 highlight! link mailQuoted1 DiffDelete
