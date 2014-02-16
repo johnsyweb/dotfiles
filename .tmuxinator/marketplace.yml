@@ -3,7 +3,7 @@ project_root: ~/dev/marketplace/
 socket_path: ~/tmp/tmux-marketplace
 windows:
   - editor:
-      layout: f98d,230x59,0,0[230x40,0,0,0,230x18,0,41,4]
+      layout: 0567,158x96,0,0[158x84,0,0,0,158x11,0,85,4]
       panes:
         - vim
         - #empty
