@@ -3,10 +3,11 @@ project_root: ~/dev/marketplace/
 socket_path: ~/tmp/tmux-marketplace
 windows:
   - editor:
-      layout: 0567,158x96,0,0[158x84,0,0,0,158x11,0,85,4]
+      layout: 9913,160x96,0,0[160x84,0,0,0,160x11,0,85{110x11,0,85,4,49x11,111,85,5}]
       panes:
         - vim
         - #empty
+        - zeus start
   - server: bundle exec foreman start
   - logs: tail -f log/development.log
   - console: bundle exec foreman run rails c
