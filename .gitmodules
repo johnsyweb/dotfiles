@@ -148,3 +148,6 @@
 [submodule ".vim/bundle/vim-bracketed-paste"]
 	path = .vim/bundle/vim-bracketed-paste
 	url = https://github.com/ConradIrwin/vim-bracketed-paste
+[submodule ".vim/bundle/vim-redub"]
+	path = .vim/bundle/vim-redub
+	url = https://github.com/notahat/vim-redub.git
