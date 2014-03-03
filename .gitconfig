@@ -5,6 +5,7 @@
 	name = Pete Johns
 [alias]
 	br = branch
+	bump = "commit -m 'Bump' --allow-empty"
 	ci = commit
 	co = checkout
 	cp = cherry-pick
