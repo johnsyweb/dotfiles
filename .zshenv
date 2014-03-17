@@ -27,6 +27,11 @@ if [[ -r /opt/boxen/env.sh ]]; then
     . /opt/boxen/env.sh
 fi
 
+tmuxinator_completion="${HOME}/src/tmuxinator/completion/tmuxinator.zsh"
+if [[ -r ${tmuxinator_completion} ]]; then
+    . ${tmuxinator_completion}
+fi
+
 if [[ -r ${HOME}/.zshenv.${HOST%%.*} ]]; then
   . ${HOME}/.zshenv.${HOST%%.*}
 fi
