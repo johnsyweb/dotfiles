@@ -157,3 +157,6 @@
 [submodule ".vim/bundle/elixir-snippets"]
 	path = .vim/bundle/elixir-snippets
 	url = https://github.com/carlosgaldino/elixir-snippets
+[submodule "elixir-ctags"]
+	path = elixir-ctags
+	url = https://github.com/mmorearty/elixir-ctags.git

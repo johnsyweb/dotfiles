@@ -5,7 +5,7 @@ set -o EXTENDED_GLOB
 git submodule init
 git submodule update
 
-for dotfile in ${PWD}/.^git*; do
+for dotfile in ${PWD}/.^git* ${PWD}/elixir-ctags/.ctags ; do
     target="${HOME}/${dotfile:t}"
     if [[ -e ${target} ]]; then
         echo "${target} exists. Skipping."
