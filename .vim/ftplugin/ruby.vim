@@ -11,24 +11,4 @@ setlocal textwidth=79
 
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
-function! s:IsConfigFile(filename)
-  return match(a:filename, "/config/") > 1
-endfunction
-
-function! s:RestartApp()
-  let l:filename = substitute(expand("%:p"), '\c^file://', '', '')
-  if s:IsConfigFile(l:filename)
-    let l:restart_file = substitute(l:filename, '/config/.*', '/tmp/restart.txt', '')
-    let l:cmd = 'touch ' . shellescape(l:restart_file)
-    let l:result = system(l:cmd)
-    if v:shell_error
-      echoerr 'Failed to kick Pow "' . l:result . '" (' . v:shell_error .')'
-    else
-      echomsg 'Pow should now restart your app'
-    endif
-  endif
-endfunction
-
-autocmd! BufWritePost *.rb call s:RestartApp()
-
 inoreabbrev pry! require 'pry'; binding.pry
