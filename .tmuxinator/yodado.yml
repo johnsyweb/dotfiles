@@ -1,0 +1,13 @@
+project_name: yodado
+project_root: ~/dev/yodado
+socket_path: ~/tmp/tmux-yodado
+windows:
+  - editor:
+      layout: 0567,158x96,0,0[158x84,0,0,0,158x11,0,85,4]
+      panes:
+        - vim
+        - #empty
+  - iex: iex -S mix
+  - redis: redis-server
+  - monitor: redis-cli
+  - web: open http://localhost:8080/admin/index.html
