@@ -6,4 +6,4 @@ endif
 
 nnoremap <Leader>c   :?^\s*case? mark k\|echo getline("'k")<CR>
 
-set nospell
+setlocal nospell
