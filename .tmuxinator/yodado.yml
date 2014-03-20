@@ -7,7 +7,6 @@ windows:
       panes:
         - vim
         - #empty
-  - iex: iex -S mix
-  - redis: redis-server
-  - monitor: redis-cli
+  - iex: iex
+  - server: iex -S mix
   - web: open http://localhost:8080/admin/index.html
