@@ -16,6 +16,7 @@
 /#*#
 /.#*
 CVS
+doc/tags
 tags
 
 # autotools generated files
