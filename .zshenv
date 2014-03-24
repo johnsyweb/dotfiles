@@ -16,6 +16,7 @@ path=(
     ${EC2_HOME}/bin
 )
 path=($^path(N-/))
+export PATH=".git/safe/../../bin:${PATH}"
 export TEMP="${HOME}/tmp"
 export VISUAL="${EDITOR}"
 

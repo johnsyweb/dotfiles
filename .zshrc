@@ -69,3 +69,5 @@ promptinit
 prompt clint
 
 alias bi='bundle install --local'
+alias make_bin_safe='mkdir -p .git/safe'
+alias make_bin_unsafe='rm -r .git/safe'
