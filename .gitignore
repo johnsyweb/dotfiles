@@ -3,3 +3,4 @@
 .vim/spell/*.add.spl
 .zcompdump*
 Gemfile.lock
+doc/tags
