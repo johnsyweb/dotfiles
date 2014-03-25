@@ -19,6 +19,7 @@
 	st = status
 	stp = status --porcelain
 	today = diff --stat '@{yesterday}'
+	to-deploy = log --merges --grep='pull request' --format='%s (%cN)' origin/production..origin/master
 	wc = whatchanged --abbrev-commit
 [color]
 	ui = auto
