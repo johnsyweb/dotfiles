@@ -1,3 +1,9 @@
+for ve in rbenv pyenv; do
+    if type ${ve} &> /dev/null; then
+        eval "$(${ve} init -)"
+    fi
+done
+
 unsetopt GLOBAL_RCS
 
 export EC2_HOME=${HOME}/.ec2
@@ -7,7 +13,6 @@ export LESS="-FMRX"
 export LESSOPEN="|lesspipe.sh %s"
 typeset -U path
 path=(
-    ~/.rbenv/shims
     ~/bin
     /usr/local/bin
     /usr/local/sbin
@@ -19,10 +24,6 @@ path=($^path(N-/))
 export PATH=".git/safe/../../bin:${PATH}"
 export TEMP="${HOME}/tmp"
 export VISUAL="${EDITOR}"
-
-if type rbenv &> /dev/null; then
-    eval "$(rbenv init -)"
-fi
 
 if [[ -r /opt/boxen/env.sh ]]; then
     . /opt/boxen/env.sh

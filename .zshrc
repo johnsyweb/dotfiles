@@ -25,8 +25,6 @@ plugins=(
     svn
     terminalapp
     vagrant
-    virtualenv
-    virtualenvwrapper
     zeus
 )
 
