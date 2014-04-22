@@ -275,3 +275,5 @@ if isdirectory(s:clang_library_path)
 endif
 
 let g:NERDSpaceDelims=1
+
+let g:makeshift_chdir=1
