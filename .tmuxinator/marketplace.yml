@@ -1,5 +1,5 @@
 project_name: marketplace
-project_root: ~/dev/marketplace/
+project_root: ~/src/marketplace/
 socket_path: ~/tmp/tmux-marketplace
 windows:
   - editor:

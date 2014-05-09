@@ -1,5 +1,5 @@
 project_name: sso
-project_root: ~/dev/sso_server
+project_root: ~/src/sso_server
 socket_path: ~/tmp/tmux-sso
 windows:
   - editor:

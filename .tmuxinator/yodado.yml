@@ -1,5 +1,5 @@
 project_name: yodado
-project_root: ~/dev/yodado
+project_root: ~/src/yodado
 socket_path: ~/tmp/tmux-yodado
 windows:
   - editor:
