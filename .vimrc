@@ -136,6 +136,9 @@ if (&t_Co > 1)
     if (&t_Co >= 256)
         let g:solarized_termcolors=256
     endif
+    if ($TERM_PROGRAM =~ "Apple_Terminal")
+        let g:solarized_termtrans=1
+    endif
 endif
 
 if ($OS =~"Windows")
@@ -215,7 +218,7 @@ endfunction
 function! RunMake()
     if exists(':Rake')
         update
-        Rake 
+        Rake
     else
         make
     endif
