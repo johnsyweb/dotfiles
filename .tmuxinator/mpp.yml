@@ -1,0 +1,11 @@
+project_name: marketplace-puppet
+project_root: ~/src/marketplace-puppet/
+socket_path: ~/tmp/tmux-marketplace-puppet
+windows:
+  - editor:
+      layout: 9913,160x96,0,0[160x84,0,0,0,160x11,0,85{110x11,0,85,4,49x11,111,85,5}]
+      panes:
+        - vim
+        - #empty
+  - master: vagrant up master && vagrant ssh master
+  - mp_web: vagrant up mp_web && vagrant ssh mp_web
