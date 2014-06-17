@@ -10,6 +10,7 @@ plugins=(
     capistrano
     color-ssh
     cpanm
+    docker
     gem
     git
     osx
