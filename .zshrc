@@ -26,6 +26,7 @@ plugins=(
     ssh-agent
     svn
     terminalapp
+    tmuxinator
     vagrant
     zeus
 )
