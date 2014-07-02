@@ -41,3 +41,4 @@ fi
 if [[ -r ${HOME}/.zshenv.${OSTYPE%%.*} ]]; then
   . ${HOME}/.zshenv.${OSTYPE%%.*}
 fi
+
