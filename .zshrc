@@ -10,6 +10,7 @@ plugins=(
     capistrano
     color-ssh
     cpanm
+    docker
     gem
     git
     osx
@@ -25,6 +26,7 @@ plugins=(
     ssh-agent
     svn
     terminalapp
+    tmuxinator
     vagrant
     zeus
 )

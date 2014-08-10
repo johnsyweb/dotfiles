@@ -136,9 +136,7 @@ if (&t_Co > 1)
     if (&t_Co >= 256)
         let g:solarized_termcolors=256
     endif
-    if ($TERM_PROGRAM =~ "Apple_Terminal")
-        let g:solarized_termtrans=1
-    endif
+    let g:solarized_termtrans=1
 endif
 
 if ($OS =~"Windows")
