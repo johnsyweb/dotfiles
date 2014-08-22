@@ -278,3 +278,9 @@ endif
 let g:NERDSpaceDelims=1
 
 let g:makeshift_chdir=1
+
+let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec {spec}"
+nnoremap <Leader>ra :call RunAllSpecs()<CR>
+nnoremap <Leader>rl :call RunLastSpec()<CR>
+nnoremap <Leader>rs :call RunNearestSpec()<CR>
+nnoremap <Leader>rt :call RunCurrentSpecFile()<CR>
