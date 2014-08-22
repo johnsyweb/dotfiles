@@ -3,3 +3,6 @@ HashSyntax:
 
 LineLength:
   Max: 160
+
+Encoding:
+  Enabled: false
