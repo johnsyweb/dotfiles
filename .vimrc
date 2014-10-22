@@ -87,6 +87,7 @@ if has('multi_byte')
     catch
     endtry
 endif
+set   relativenumber
 set   showcmd
 if has('spell')
     set spell
@@ -246,6 +247,7 @@ nnoremap <Leader>sc :<C-U>highlight! Comment ctermfg=14 guifg=#80a0ff<CR>
 
 "    \1      git: show first commit where term under cursor was added:
 nnoremap <Leader>1 :!git log --reverse -p -S<cword> %<CR>
+inoremap <Leader>k <C-O>D
 
 let g:syntastic_check_on_open=0
 let g:syntastic_error_symbol='X'
