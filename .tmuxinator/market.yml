@@ -1,6 +1,6 @@
-project_name: marketplace
+project_name: market
 project_root: ~/src/marketplace/
-socket_path: ~/tmp/tmux-marketplace
+socket_path: ~/tmp/tmux-market
 windows:
   - editor:
       layout: 9913,160x96,0,0[160x84,0,0,0,160x11,0,85{110x11,0,85,4,49x11,111,85,5}]
