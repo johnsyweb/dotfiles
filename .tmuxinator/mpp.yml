@@ -9,5 +9,5 @@ windows:
         - #empty
   - master: vagrant up --provision master && vagrant ssh master
   - buildbox: vagrant up --provision buildbox && vagrant ssh buildbox
-  - mp_web: vagrant up --provision mp_web && vagrant ssh mp_web
-  - web01: vagrant up --provision web01 && vagrant ssh web01
+  - market_web: vagrant up --provision mp_web && vagrant ssh mp_web
+  - account_web: vagrant up --provision sso_web01 && vagrant ssh sso_web01
