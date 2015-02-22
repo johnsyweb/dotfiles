@@ -14,6 +14,7 @@ plugins=(
     docker
     gem
     git
+    gnu-utils
     osx
     pip
     pow
