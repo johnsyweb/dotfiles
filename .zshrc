@@ -15,6 +15,7 @@ plugins=(
     gem
     git
     gnu-utils
+    heroku
     osx
     pip
     pow
