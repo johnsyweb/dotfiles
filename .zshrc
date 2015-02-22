@@ -3,7 +3,6 @@ ZSH=${HOME}/.oh-my-zsh
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(
-    autoenv
     autojump
     aws
     brew
