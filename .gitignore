@@ -1,4 +1,4 @@
-/.config
+/.gitconfig
 /.vim/.*
 /.vim/snippets/_.snippets
 /.vim/spell/*.add.spl
