@@ -1,3 +1,7 @@
+if [[ -r /opt/boxen/env.sh ]]; then
+    . /opt/boxen/env.sh
+fi
+
 ZSH=${HOME}/.oh-my-zsh
 
 COMPLETION_WAITING_DOTS="true"
@@ -74,3 +78,8 @@ prompt clint
 alias bi='bundle install --local'
 alias make_bin_safe='mkdir -p .git/safe'
 alias make_bin_unsafe='rm -r .git/safe'
+
+tmuxinator_completion="${HOME}/src/tmuxinator/completion/tmuxinator.zsh"
+if [[ -r ${tmuxinator_completion} ]]; then
+    . ${tmuxinator_completion}
+fi
