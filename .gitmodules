@@ -34,10 +34,6 @@
 	path = .vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
 	ignore = untracked
-[submodule ".vim/bundle/fitnesse.vim"]
-	path = .vim/bundle/fitnesse.vim
-	url = git://github.com/vim-scripts/fitnesse.vim.git
-	ignore = untracked
 [submodule ".vim/bundle/solarized"]
 	path = .vim/bundle/solarized
 	url = git@github.com:altercation/solarized.git
@@ -130,10 +126,6 @@
 	path = .vim/bundle/vim-eunuch
 	url = git@github.com:tpope/vim-eunuch.git
 	ignore = untracked
-[submodule ".vim/bundle/rainbow_parentheses.vim"]
-	path = .vim/bundle/rainbow_parentheses.vim
-	url = https://github.com/kien/rainbow_parentheses.vim
-	ignore = untracked
 [submodule ".vim/bundle/SingleCompile"]
 	path = .vim/bundle/SingleCompile
 	url = git@github.com:xuhdev/SingleCompile.git
@@ -174,10 +166,6 @@
 	path = .vim/bundle/vim-gnupg
 	url = https://github.com/jamessan/vim-gnupg
 	ignore = untracked
-[submodule ".vim/bundle/TailMinusF"]
-	path = .vim/bundle/TailMinusF
-	url = git@github.com:vim-scripts/TailMinusF.git
-	ignore = untracked
 [submodule ".vim/bundle/vim-abolish"]
 	path = .vim/bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish
@@ -197,10 +185,6 @@
 [submodule ".vim/bundle/vim-bracketed-paste"]
 	path = .vim/bundle/vim-bracketed-paste
 	url = https://github.com/ConradIrwin/vim-bracketed-paste
-	ignore = untracked
-[submodule ".vim/bundle/vim-redub"]
-	path = .vim/bundle/vim-redub
-	url = https://github.com/notahat/vim-redub.git
 	ignore = untracked
 [submodule ".vim/bundle/vim-elixir"]
 	path = .vim/bundle/vim-elixir
