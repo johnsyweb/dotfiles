@@ -7,7 +7,4 @@ windows:
       panes:
         - vim
         - #empty
-  - master: vagrant up --provision master && vagrant ssh master
-  - buildbox: vagrant up --provision buildbox && vagrant ssh buildbox
-  - market_web: vagrant up --provision mp_web && vagrant ssh mp_web
-  - account_web: vagrant up --provision sso_web01 && vagrant ssh sso_web01
+  - master: PUPPET_APPLY='' vagrant up --provision master && vagrant ssh master
