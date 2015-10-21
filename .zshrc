@@ -8,7 +8,6 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(
     autojump
-    aws
     brew
     bundler
     capistrano
