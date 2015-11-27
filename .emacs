@@ -15,33 +15,35 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
 
 (defvar my-packages '(ace-jump-mode
-                       auto-complete
-                       cider
-                       elscreen
-                       evil
-                       evil-leader
-                       evil-paredit
-                       evil-surround
-                       evil-tabs
-                       helm helm-descbinds
-                       highlight
-                       key-chord
-                       magit
-                       nrepl-eval-sexp-fu
-                       paredit
-                       rainbow-delimiters
-                       recentf
-                       smart-mode-line
-                       smartparens
-                       solarized-theme
-                       )
+		      auto-complete
+		      cider
+		      elscreen
+		      evil
+		      evil-leader
+		      evil-paredit
+		      evil-surround
+		      evil-tabs
+		      flycheck
+		      helm helm-descbinds
+		      highlight
+		      key-chord
+		      magit
+		      nrepl-eval-sexp-fu
+		      paredit
+		      puppet-mode
+		      rainbow-delimiters
+		      recentf
+		      smart-mode-line
+		      smartparens
+		      solarized-theme
+		      )
   "A list of packages to check for and install at launch.")
 
 (defun my-missing-packages ()
   (let (missing-packages)
     (dolist (package my-packages (reverse missing-packages))
       (or (package-installed-p package)
-          (push package missing-packages)))))
+	  (push package missing-packages)))))
 
 (defun ensure-my-packages ()
   (let ((missing (my-missing-packages)))
@@ -86,10 +88,11 @@
 (recentf-mode t)
 
 (evil-leader/set-key
-  "e" 'find-file
-  "b" 'switch-to-buffer
-  "k" 'kill-buffer
   "]" 'save-buffer
+  "b" 'switch-to-buffer
+  "e" 'find-file
+  "g" 'magit-status
+  "k" 'kill-buffer
   )
 
 (if after-init-time
@@ -102,10 +105,6 @@
                  "\C-x\C-f" 'helm-find-files
                  "q:" 'helm-complex-command-history
                  "\\\\w" 'evil-ace-jump-word-mode)
-
-;;; Uncomment these key-chord lines if you like that "remap 'jk' to ESC" trick.
-(key-chord-mode t)
-(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Filetype-style hooks.
@@ -136,16 +135,16 @@
 (load-theme 'solarized-dark)
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
-  '(custom-safe-themes
-     (quote
-       ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
-  )
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
