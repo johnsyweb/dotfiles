@@ -211,3 +211,6 @@
 [submodule ".vim/bundle/vim-tmux"]
 	path = .vim/bundle/vim-tmux
 	url = https://github.com/tmux-plugins/vim-tmux.git
+[submodule ".vim/bundle/vim-speeddating"]
+	path = .vim/bundle/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating.git
