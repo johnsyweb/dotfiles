@@ -28,6 +28,7 @@
 		      highlight
 		      key-chord
 		      magit
+		      markdown-mode
 		      nrepl-eval-sexp-fu
 		      paredit
 		      puppet-mode
