@@ -28,6 +28,7 @@ plugins=(
     rake
     rbenv
     redis-cli
+    safe-paste
     ssh-agent
     svn
     terminalapp
