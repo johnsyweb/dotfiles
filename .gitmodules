@@ -200,7 +200,7 @@
 	ignore = untracked
 [submodule ".vim/bundle/dockerfile.vim"]
 	path = .vim/bundle/dockerfile.vim
-	url = https://github.com/ekalinin/dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git
 	ignore = untracked
 [submodule ".vim/bundle/vim-rspec"]
 	path = .vim/bundle/vim-rspec
