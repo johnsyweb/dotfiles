@@ -30,6 +30,7 @@ values."
      git
      github
      intero
+     javascript
      markdown
      org
      (shell :variables
