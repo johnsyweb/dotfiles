@@ -29,6 +29,7 @@ values."
      emacs-lisp
      git
      github
+     intero
      markdown
      org
      (shell :variables
