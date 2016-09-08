@@ -3,7 +3,7 @@ unsetopt GLOBAL_RCS
 export EDITOR="vim"
 export LESS="-FMRX"
 export LESSOPEN="|lesspipe.sh %s"
-export PATH=".git/safe/../../bin:${PATH}"
+export PATH=".git/safe/../../bin:/usr/sbin:${PATH}"
 export TEMP="${HOME}/tmp"
 export VISUAL="${EDITOR}"
 
