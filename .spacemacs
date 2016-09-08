@@ -40,6 +40,7 @@ values."
            ruby-enable-enh-ruby-mode t
            ruby-version-manager 'rbenv
            ruby-test-runner 'rspec) 
+     restclient
      ruby-on-rails
      spell-checking
      syntax-checking
