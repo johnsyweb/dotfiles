@@ -33,19 +33,21 @@ values."
      javascript
      markdown
      org
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
-     (ruby :variables
-           ruby-enable-enh-ruby-mode t
-           ruby-version-manager 'rbenv
-           ruby-test-runner 'rspec) 
      restclient
      ruby-on-rails
      spell-checking
      syntax-checking
      version-control
      yaml
+     (ruby :variables
+           ruby-enable-enh-ruby-mode t
+           ruby-version-manager 'rbenv
+           ruby-test-runner 'rspec)
+     (elm :variables
+          elm-format-on-save t)
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
