@@ -33,6 +33,7 @@ values."
      javascript
      markdown
      org
+     puppet
      restclient
      ruby-on-rails
      spell-checking
