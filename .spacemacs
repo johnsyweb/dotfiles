@@ -26,6 +26,7 @@ values."
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t)
      better-defaults
+     elixir
      emacs-lisp
      git
      github
