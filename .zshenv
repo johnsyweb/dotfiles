@@ -19,3 +19,10 @@ if [[ -r ${HOME}/.zshenv.${OSTYPE%%.*} ]]; then
   . ${HOME}/.zshenv.${OSTYPE%%.*}
 fi
 
+export LDFLAGS="${LDFLAGS} -L$(/usr/local/bin/brew --prefix openssl)/lib"
+export CPPFLAGS="${CPPFLAGS} -I$(/usr/local/bin/brew --prefix openssl)/include"
+export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} $(/usr/local/bin/brew --prefix openssl)/lib/pkgconfig"
+
+for brew_override in openssl; do
+      export PATH="$(/usr/local/bin/brew --prefix ${brew_override})/bin":${PATH}
+done
