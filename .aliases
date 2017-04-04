@@ -11,8 +11,12 @@ SunOS)
     alias ls='ls -aFGl'
     ;;
 esac
+
+alias bi='bundle install --local'
 if [[ -x '/Applications/Emacs.app/Contents/MacOS/bin/emacsclient' ]]; then
     alias e='emacs'
     alias emacs='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --no-wait'
 fi
 alias m='mutt'
+alias make_bin_safe='mkdir -p .git/safe'
+alias make_bin_unsafe='rm -r .git/safe'
