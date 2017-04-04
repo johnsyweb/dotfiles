@@ -17,6 +17,7 @@ plugins=(
     gem
     git
     gnu-utils
+    gpg-agent
     heroku
     osx
     pip
@@ -37,9 +38,12 @@ plugins=(
 )
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-source ${HOME}/.zshenv
 source ${ZSH}/oh-my-zsh.sh
 source ${HOME}/.aliases
+
+if [[ -d /usr/local/share/zsh-completions ]]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+fi
 
 mcd() {
     mkdir $1
@@ -73,10 +77,6 @@ setopt zle
 autoload -U promptinit
 promptinit
 prompt clint
-
-alias bi='bundle install --local'
-alias make_bin_safe='mkdir -p .git/safe'
-alias make_bin_unsafe='rm -r .git/safe'
 
 tmuxinator_completion="${HOME}/src/tmuxinator/completion/tmuxinator.zsh"
 if [[ -r ${tmuxinator_completion} ]]; then
