@@ -11,4 +11,8 @@ SunOS)
     alias ls='ls -aFGl'
     ;;
 esac
+if [[ -x '/Applications/Emacs.app/Contents/MacOS/bin/emacsclient' ]]; then
+    alias e='emacs'
+    alias emacs='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --no-wait'
+fi
 alias m='mutt'

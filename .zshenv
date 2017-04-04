@@ -1,6 +1,10 @@
 unsetopt GLOBAL_RCS
 
-export EDITOR="vim"
+if [[ -x '/Applications/Emacs.app/Contents/MacOS/bin/emacsclient' ]]; then
+    export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
+else
+    export EDITOR="vim"
+fi
 export LESS="-FMRX"
 export LESSOPEN="|lesspipe.sh %s"
 export PATH="${HOME}/bin:.git/safe/../../bin:/usr/sbin:${PATH}"
