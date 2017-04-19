@@ -17,7 +17,6 @@ plugins=(
     gem
     git
     gnu-utils
-    gpg-agent
     heroku
     osx
     pip
