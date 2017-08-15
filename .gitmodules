@@ -54,10 +54,6 @@
 	path = .vim/bundle/vim-rails
 	url = git@github.com:tpope/vim-rails.git
 	ignore = untracked
-[submodule ".vim/bundle/vcard-syntax"]
-	path = .vim/bundle/vcard-syntax
-	url = git@github.com:vim-scripts/vcard-syntax.git
-	ignore = untracked
 [submodule ".vim/bundle/dbext.vim"]
 	path = .vim/bundle/dbext.vim
 	url = git@github.com:vim-scripts/dbext.vim.git
@@ -126,10 +122,6 @@
 	path = .vim/bundle/vim-eunuch
 	url = git@github.com:tpope/vim-eunuch.git
 	ignore = untracked
-[submodule ".vim/bundle/singlecompile"]
-	path = .vim/bundle/singlecompile
-	url = git@github.com:xuhdev/singlecompile.git
-	ignore = untracked
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = git@github.com:robbyrussell/oh-my-zsh.git
@@ -141,10 +133,6 @@
 [submodule ".vim/bundle/vim-ragtag"]
 	path = .vim/bundle/vim-ragtag
 	url = git@github.com:tpope/vim-ragtag.git
-	ignore = untracked
-[submodule ".vim/bundle/omnicppcomplete"]
-	path = .vim/bundle/omnicppcomplete
-	url = git@github.com:vim-scripts/omnicppcomplete.git
 	ignore = untracked
 [submodule ".vim/bundle/textile.vim"]
 	path = .vim/bundle/textile.vim
@@ -197,10 +185,6 @@
 [submodule "elixir-ctags"]
 	path = elixir-ctags
 	url = https://github.com/mmorearty/elixir-ctags.git
-	ignore = untracked
-[submodule ".vim/bundle/dockerfile.vim"]
-	path = .vim/bundle/dockerfile.vim
-	url = https://github.com/ekalinin/Dockerfile.vim.git
 	ignore = untracked
 [submodule ".vim/bundle/vim-rspec"]
 	path = .vim/bundle/vim-rspec
