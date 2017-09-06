@@ -76,14 +76,3 @@ setopt zle
 autoload -U promptinit
 promptinit
 prompt clint
-
-<<<<<<< HEAD
-alias bi='bundle install --local'
-alias make_bin_safe='mkdir -p .git/safe'
-alias make_bin_unsafe='rm -r .git/safe'
-=======
-tmuxinator_completion="${HOME}/src/tmuxinator/completion/tmuxinator.zsh"
-if [[ -r ${tmuxinator_completion} ]]; then
-    . ${tmuxinator_completion}
-fi
->>>>>>> e936a3db7cfde4e3a5056d3b1185bdb9c9f6962f
