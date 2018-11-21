@@ -39,16 +39,6 @@ if [[ -d ${HOME}/src/identity-dev-bootstrap/files ]]; then
     done
 fi
 
-# export EMACSCLIENT='/usr/local/bin/emacsclient'
-# if [[ -x ${EMACSCLIENT} ]]; then
-#     alias e='emacs'
-#     alias emacs='${EMACSCLIENT} --no-wait'
-#     export EDITOR=${EMACSCLIENT}
-# else
-#     export EDITOR="vim"
-# fi
-
-
 mcd() {
     mkdir $1
     cd $1
