@@ -1,48 +1,53 @@
-if [[ -r /opt/boxen/env.sh ]]; then
-    . /opt/boxen/env.sh
-fi
-
 ZSH=${HOME}/.oh-my-zsh
 
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(
-    autojump
     brew
     bundler
     capistrano
     color-ssh
     cpanm
     docker
+    emacs
     gem
     git
-    gnu-utils
+    github
     heroku
     osx
-    pip
-    pow
-    powder
-    profiles
-    python
+    pyenv
     rails
     rake
-    rbenv
     redis-cli
     safe-paste
     ssh-agent
-    svn
-    terminalapp
     vagrant
-    zeus
 )
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 source ${ZSH}/oh-my-zsh.sh
 source ${HOME}/.aliases
 
-if [[ -d /usr/local/share/zsh-completions ]]; then
-    fpath=(/usr/local/share/zsh-completions $fpath)
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
+
+
+if [[ -d ${HOME}/src/identity-dev-bootstrap/files ]]; then
+    for s in ${HOME}/src/identity-dev-bootstrap/files/*.sh; do
+        source ${s}
+    done
+fi
+
+# export EMACSCLIENT='/usr/local/bin/emacsclient'
+# if [[ -x ${EMACSCLIENT} ]]; then
+#     alias e='emacs'
+#     alias emacs='${EMACSCLIENT} --no-wait'
+#     export EDITOR=${EMACSCLIENT}
+# else
+#     export EDITOR="vim"
+# fi
+
 
 mcd() {
     mkdir $1

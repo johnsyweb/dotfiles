@@ -281,6 +281,11 @@ let g:NERDSpaceDelims=1
 
 let g:makeshift_chdir=1
 
+let g:makeshift_systems = {
+    \'meson.build': 'ninja -C build',
+    \}
+
+
 let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec {spec}"
 nnoremap <Leader>ra :call RunAllSpecs()<CR>
 nnoremap <Leader>rl :call RunLastSpec()<CR>
