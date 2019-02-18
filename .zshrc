@@ -32,11 +32,15 @@ if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-
-if [[ -d ${HOME}/src/identity-dev-bootstrap/files ]]; then
-    for s in ${HOME}/src/identity-dev-bootstrap/files/*.sh; do
-        source ${s}
+IDENTITY_DEV_BOOTSTRAP_FILES="${HOME}/src/identity-dev-bootstrap/files"
+if [[ -d $IDENTITY_DEV_BOOTSTRAP_FILES ]]; then
+    for id_config in ${IDENTITY_DEV_BOOTSTRAP_FILES}/*.sh(.); do
+        source "${id_config}"
     done
+fi
+
+if [[ -d /usr/local/share/zsh-completions ]]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
 fi
 
 mcd() {
