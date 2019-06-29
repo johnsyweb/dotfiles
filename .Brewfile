@@ -1,3 +1,4 @@
+tap "caskroom/cask"
 tap "d12frosted/emacs-plus"
 tap "heroku/brew"
 tap "homebrew/bundle"
@@ -81,13 +82,13 @@ brew "mtr"
 # Mongrel of mail user agents (part elm, pine, mush, mh, etc.)
 brew "mutt"
 # Open source relational database management system
-brew "mysql@5.6", restart_service: true
+brew "mysql@5.6", restart_service: true, link: true
 # Port scanning utility for large networks
 brew "nmap"
 # Manage multiple NodeJS versions
 brew "nodenv"
 # Object-relational database system
-brew "postgresql@9.6", restart_service: true
+brew "postgresql@9.6", restart_service: true, link: true
 # Python version management
 brew "pyenv"
 # Install various Ruby versions and implementations
@@ -127,12 +128,20 @@ brew "puma/puma/puma-dev"
 # The Mighty CLI for AWS
 brew "wallix/awless/awless"
 cask "aws-vault"
+cask "ccmenu"
 cask "dash"
+cask "font-source-code-pro"
+cask "font-source-code-pro-for-powerline"
+cask "google-backup-and-sync"
+cask "google-chrome"
 cask "gpg-suite"
+cask "keybase"
 cask "phantomjs"
 cask "postico"
 cask "private-internet-access"
 cask "riot"
+cask "sequel-pro"
+cask "shortcat"
 cask "signal"
 cask "spectacle"
 cask "vlc"
