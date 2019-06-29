@@ -73,6 +73,8 @@ brew "libmaxminddb"
 brew "libxml2"
 # Text-to-HTML conversion tool
 brew "markdown"
+# Mac App Store command-line interface
+brew "mas"
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
 # Remote terminal application
@@ -149,3 +151,12 @@ cask "whatsapp"
 cask "wireshark"
 cask "xquartz"
 cask "railwaycat/emacsmacport/emacs-mac-spacemacs-icon"
+mas "1Password 7", id: 1333542190
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Monosnap", id: 540348655
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Slack", id: 803453959
+mas "Tweetbot", id: 1384080005
