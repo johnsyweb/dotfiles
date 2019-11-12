@@ -32,3 +32,7 @@ for brew_override in openssl 'postgresql@9.6' 'mysql@5.6'; do
     export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} ${prefix}/lib/pkgconfig"
     export PATH="${prefix}/bin":${PATH}
 done
+
+if [[ "${AWS_VAULT}" ]] ; then
+    export WINDOW="${AWS_VAULT} [${AWS_REGION:-No region}]"
+fi
