@@ -138,10 +138,6 @@
 	path = .vim/bundle/textile.vim
 	url = git@github.com:timcharper/textile.vim.git
 	ignore = untracked
-[submodule ".vim/bundle/nginx-vim-syntax"]
-	path = .vim/bundle/nginx-vim-syntax
-	url = git@github.com:evanmiller/nginx-vim-syntax.git
-	ignore = untracked
 [submodule ".vim/bundle/vim-markdown"]
 	path = .vim/bundle/vim-markdown
 	url = git@github.com:tpope/vim-markdown.git
@@ -206,3 +202,6 @@
 	path = .emacs.d
 	url = https://github.com/syl20bnr/spacemacs.git
 	ignore = untracked
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

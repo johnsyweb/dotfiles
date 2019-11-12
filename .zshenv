@@ -9,7 +9,7 @@ fi
 
 export LESS="-FMRX"
 export LESSOPEN="|lesspipe.sh %s"
-export PATH="${HOME}/bin:/usr/local/bin:.git/safe/../../bin:/usr/sbin:${PATH}"
+export PATH="${HOME}/bin:/usr/local/bin:/sbin:/usr/local/sbin:.git/safe/../../bin:/usr/sbin:${PATH}"
 export TEMP="${HOME}/tmp"
 export VISUAL="${EDITOR}"
 
