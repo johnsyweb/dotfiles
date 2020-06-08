@@ -1,8 +1,9 @@
 # vi: noet ts=8 sw=8
 
 [user]
-	email = paj-github@johnsy.com
+	email = paj+github@johnsy.com
 	name = Pete Johns
+	signingKey = F05BBF16907F7671
 [alias]
 	br = branch
 	bump = "commit -m 'Bump' --allow-empty"
@@ -13,19 +14,20 @@
 	df = diff
 	lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all --decorate
 	mt = mergetool
+	new = !git init && git symbolic-ref HEAD refs/heads/main
 	pr = smart-pull
 	sd = svn dcommit
 	sfr = !git svn fetch && git svn rebase
 	st = status
 	stp = status --porcelain
-	today = diff --stat '@{yesterday}'
 	to-deploy = log --merges --grep='pull request' --format='%s (%cN)' origin/production..origin/master
+	today = diff --stat '@{yesterday}'
 	wc = whatchanged --abbrev-commit
 [color]
 	ui = auto
 [core]
 	autocrlf = input
-	excludesfile = /opt/boxen/config/git/gitignore
+	excludesFile = /Users/paj/src/dotfiles/git-global-ignore
 	pager = less -+$LESS -FRX
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [web]
@@ -40,3 +42,7 @@
 	user = johnsyweb
 [credential]
 	helper = osxkeychain
+[commit]
+	gpgsign = true
+[buildkite]
+	apikey = REDACTED
