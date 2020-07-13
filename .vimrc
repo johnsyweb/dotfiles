@@ -63,6 +63,7 @@ set   clipboard=exclude:.*
 set   cmdheight=2
 set nocp
 set   dictionary=/usr/share/dict/words
+set   diffopt-=internal
 set   diffopt+=iwhite
 set   display=uhex
 set   equalalways
