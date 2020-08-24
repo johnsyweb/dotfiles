@@ -46,5 +46,7 @@
 	gpgsign = true
 [buildkite]
 	apikey = REDACTED
+[pull]
+	ff = only
 [init]
 	defaultBranch = main
