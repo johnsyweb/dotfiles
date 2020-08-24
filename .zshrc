@@ -15,7 +15,6 @@ plugins=(
     github
     heroku
     osx
-    pyenv
     rails
     rake
     redis-cli
