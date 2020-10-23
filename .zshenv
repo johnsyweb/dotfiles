@@ -33,6 +33,8 @@ for brew_override in openssl 'postgresql@9.6' 'mysql@5.6'; do
     export PATH="${prefix}/bin":${PATH}
 done
 
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
 if [[ "${AWS_VAULT}" ]] ; then
     export WINDOW="${AWS_VAULT} [${AWS_REGION:-No region}]"
 fi
