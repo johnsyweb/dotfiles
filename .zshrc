@@ -18,7 +18,6 @@ plugins=(
     rails
     rake
     redis-cli
-    safe-paste
     vagrant
 )
 
