@@ -1,6 +1,7 @@
 ZSH=${HOME}/.oh-my-zsh
 
 COMPLETION_WAITING_DOTS="true"
+DISABLE_MAGIC_FUNCTIONS=true
 
 plugins=(
     brew
