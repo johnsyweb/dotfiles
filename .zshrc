@@ -19,7 +19,6 @@ plugins=(
     rake
     redis-cli
     safe-paste
-    ssh-agent
     vagrant
 )
 
