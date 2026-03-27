@@ -1,4 +1,3 @@
-unsetopt GLOBAL_RCS
 
 export EMACSCLIENT='/usr/local/bin/emacsclient'
 if [[ -x ${EMACSCLIENT} ]]; then
