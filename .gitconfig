@@ -3,7 +3,7 @@
 [user]
 	email = paj+github@johnsy.com
 	name = Pete Johns
-	signingKey = F05BBF16907F7671
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMEe7zVz32CKDjmhNyEnUbZvdK0knnqCOqC6DIUlC5Cu
 [alias]
 	br = branch
 	bump = "commit -m 'Bump' --allow-empty"
@@ -51,3 +51,7 @@
 	ff = only
 [init]
 	defaultBranch = main
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
