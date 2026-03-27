@@ -14,18 +14,12 @@
 	df = diff
 	lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all --decorate
 	mt = mergetool
-	new = !git init && git symbolic-ref HEAD refs/heads/main
-	pr = smart-pull
-	sd = svn dcommit
-	sfr = !git svn fetch && git svn rebase
 	st = status
 	stp = status --porcelain
 	to-deploy = log --merges --grep='pull request' --format='%s (%cN)' origin/production..origin/master
 	today = diff --stat '@{yesterday}'
 	wc = whatchanged --abbrev-commit
 	praise = blame
-[color]
-	ui = auto
 [core]
 	autocrlf = input
 	excludesFile = /Users/paj/src/dotfiles/git-global-ignore
