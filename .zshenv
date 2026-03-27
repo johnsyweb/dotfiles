@@ -1,10 +1,5 @@
 
-export EMACSCLIENT='/usr/local/bin/emacsclient'
-if [[ -x ${EMACSCLIENT} ]]; then
-    export EDITOR=${EMACSCLIENT}
-else
-    export EDITOR="vim"
-fi
+export EDITOR="vim"
 
 export LESS="-FMRX"
 export LESSOPEN="|lesspipe.sh %s"
