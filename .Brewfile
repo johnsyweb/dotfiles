@@ -1,114 +1,65 @@
-tap "caskroom/cask"
-tap "d12frosted/emacs-plus"
-tap "heroku/brew"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/core"
-tap "homebrew/services"
-tap "puma/puma"
-tap "railwaycat/emacsmacport"
-tap "wallix/awless"
-# CLI tool for working with Architecture Decision Records
-brew "adr-tools"
-# Library for command-line editing
-brew "readline"
-# General-purpose data compression with high compression ratio
-brew "xz"
-# Official Amazon AWS command-line interface
-brew "awscli"
-# Bourne-Again SHell, a UNIX command interpreter
-brew "bash"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
-# Configurable talking characters in ASCII art
-brew "cowsay"
-# Reimplementation of ctags(1)
-brew "ctags"
-# POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
-brew "dash"
-# Pack, ship and run any application as a lightweight container
-brew "docker", link: false
-# Isolated development environments using Docker
-brew "docker-compose", link: false
-# Docker-machine completion script
-brew "docker-machine-completion"
-# Banner-like program prints strings as ASCII art
-brew "figlet"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# GitHub command-line tool
+brew "gh"
 # Distributed revision control system
 brew "git"
 # Prevents you from committing sensitive information to a git repo
 brew "git-secrets"
-# Git extension to generate reports for standup meetings
-brew "git-standup"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
-# GNU Pretty Good Privacy (PGP) package
-brew "gnupg", link: false
-# The Haskell Tool Stack
-brew "haskell-stack"
-# Text-based UI library
-brew "ncurses"
-# Improved top (interactive process viewer)
-brew "htop"
-# Add GitHub support to git on the command-line
-brew "hub"
-# AWS IAM import and export tool
-brew "iamy"
-# Tools and libraries to manipulate images in many formats
+# Converts/uploads GPS waypoints, tracks, and routes
+brew "gpsbabel"
+# Open-source video transcoder available for Linux, Mac, and Windows
+brew "handbrake"
+# Post-modern modal text editor
+brew "helix"
+# Tools and libraries to manipulate images in select formats
 brew "imagemagick"
-# CLI for ImageOptim, ImageAlpha and JPEGmini
-brew "imageoptim-cli"
 # International Ispell
 brew "ispell"
-# Extract Digicam setting info from EXIF JPEG headers
-brew "jhead"
+# YAML Parser
+brew "libyaml"
+# Serializes the output of command-line tools to structured JSON output
+brew "jc"
+# Git-compatible distributed version control system
+brew "jj"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Input filter for the pager less
-brew "lesspipe"
-# C library for the MaxMind DB file format
-brew "libmaxminddb"
-# GNOME XML library
-brew "libxml2"
-# Text-to-HTML conversion tool
-brew "markdown"
+# Music engraving system
+brew "lilypond"
 # Mac App Store command-line interface
 brew "mas"
+# Run a Kubernetes cluster locally
+brew "minikube"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
-# Remote terminal application
-brew "mosh"
 # 'traceroute' and 'ping' in a single tool
 brew "mtr"
-# Mongrel of mail user agents (part elm, pine, mush, mh, etc.)
-brew "mutt"
-# Open source relational database management system
-brew "mysql@5.6", restart_service: true, link: true
 # Port scanning utility for large networks
 brew "nmap"
-# Manage multiple NodeJS versions
-brew "nodenv"
-# Object-relational database system
-brew "postgresql@9.6", restart_service: true, link: true
-# Python version management
-brew "pyenv"
-# Install various Ruby versions and implementations
-brew "ruby-build"
-# Ruby version manager
-brew "rbenv"
-# Sampling profiler for Ruby
-brew "rbspy"
-# Persistent key-value database, with built-in net interface
-brew "redis", restart_service: true
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
+# Create, run, and share large language models (LLMs)
+brew "ollama", restart_service: :changed
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Convert bitmaps to vector graphics
+brew "potrace"
+# Monitor data's progress through a pipe
+brew "pv"
+# Rsync for cloud storage
+brew "rclone"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Command-line interface for https://speedtest.net bandwidth tests
+brew "speedtest-cli"
 # Multi-platform code-search similar to ack and ag
 brew "the_platinum_searcher"
-# Code-search similar to ack
-brew "the_silver_searcher"
-# Simplified and community-driven man pages
-brew "tldr"
 # Terminal multiplexer
 brew "tmux"
 # Pager/text based browser
@@ -117,46 +68,80 @@ brew "w3m"
 brew "watch"
 # Internet file retriever
 brew "wget"
-# JavaScript package manager
-brew "yarn"
-# General-purpose lossless data-compression library
-brew "zlib"
-# UNIX shell (command interpreter)
-brew "zsh"
-# Everything you need to get started with Heroku
-brew "heroku/brew/heroku"
-# A tool to manage rack apps in development with puma
-brew "puma/puma/puma-dev"
-# The Mighty CLI for AWS
-brew "wallix/awless/awless"
-cask "aws-vault"
-cask "ccmenu"
-cask "dash"
-cask "font-source-code-pro"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
+# Open links in any browser
+cask "choosy"
+# Write, edit, and chat about your code with AI
+cask "cursor"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+# Utility that prevents the system from going to sleep
+cask "domzilla-caffeine"
+# Web browser
+cask "firefox"
+cask "font-atkinson-hyperlegible"
+cask "font-atkinson-hyperlegible-mono"
+cask "font-google-sans-code"
+cask "font-open-sans"
 cask "font-source-code-pro-for-powerline"
-cask "google-backup-and-sync"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
+# Web browser
 cask "google-chrome"
-cask "gpg-suite"
-cask "keybase"
-cask "phantomjs"
-cask "postico"
-cask "private-internet-access"
-cask "riot"
-cask "sequel-pro"
+# Open-source video transcoder
+cask "handbrake-app"
+# Tool to optimise images to a smaller size
+cask "imageoptim"
+# Graphical interface for LaTeX
+cask "latexit"
+# Meet, chat, call, and collaborate in just one place
+cask "microsoft-teams"
+# Free and open-source RSS reader
+cask "netnewswire"
+# VPN client for secure internet access and private browsing
+cask "nordvpn"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# WebKit based web browser
+cask "orion"
+# Control your tools with a few keystrokes
+cask "raycast"
+# App that enables mouse-free UI interaction
 cask "shortcat"
+# Instant messaging application focusing on security
 cask "signal"
-cask "spectacle"
+# Team communication and collaboration software
+cask "slack"
+# Control your Sonos system
+cask "sonos"
+# Open-source code editor
+cask "visual-studio-code"
+# Multimedia player
 cask "vlc"
-cask "whatsapp"
-cask "wireshark"
-cask "xquartz"
-cask "railwaycat/emacsmacport/emacs-mac-spacemacs-icon"
-mas "1Password 7", id: 1333542190
+mas "1Password for Safari", id: 1569813296
+mas "Adblock Plus", id: 1432731683
+mas "CCMenu", id: 603117688
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Monosnap", id: 540348655
 mas "Numbers", id: 409203825
+mas "Obsidian Web Clipper", id: 6720708363
+mas "Pages", id: 361309726
 mas "Pages", id: 409201541
-mas "Slack", id: 803453959
-mas "Tweetbot", id: 1384080005
+mas "Tampermonkey", id: 6738342400
+mas "Userscripts", id: 1463298887
+vscode "bncummings.lytex-language-pack"
+vscode "bncummings.lytex-language-support"
+vscode "esbenp.prettier-vscode"
+vscode "github.copilot-chat"
+vscode "github.vscode-github-actions"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode.makefile-tools"
+vscode "orta.vscode-jest"
+vscode "testdouble.vscode-standard-ruby"
+uv "specify-cli"
