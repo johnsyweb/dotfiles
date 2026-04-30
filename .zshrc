@@ -1,50 +1,23 @@
-ZSH=${HOME}/.oh-my-zsh
-
 COMPLETION_WAITING_DOTS="true"
 DISABLE_MAGIC_FUNCTIONS=true
 
 plugins=(
     brew
     bundler
-    capistrano
     color-ssh
-    cpanm
     docker
-    emacs
-    gem
-    git
-    github
-    heroku
-    osx
-    rails
-    rake
-    redis-cli
-    vagrant
+    fzf
+    gh
+    kube-ps1
+    kubectl
+    macos
+    mise
+    vscode
 )
 
-zstyle :omz:plugins:ssh-agent agent-forwarding on
+ZSH=${HOME}/.oh-my-zsh
 source ${ZSH}/oh-my-zsh.sh
 source ${HOME}/.aliases
-
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
-
-IDENTITY_DEV_BOOTSTRAP_FILES="${HOME}/src/identity-dev-bootstrap/files"
-if [[ -d $IDENTITY_DEV_BOOTSTRAP_FILES ]]; then
-    for id_config in ${IDENTITY_DEV_BOOTSTRAP_FILES}/*.sh(.); do
-        source "${id_config}"
-    done
-fi
-
-if [[ -d /usr/local/share/zsh-completions ]]; then
-    fpath=(/usr/local/share/zsh-completions $fpath)
-fi
-
-mcd() {
-    mkdir $1
-    cd $1
-}
 
 setopt nobeep
 setopt   braceccl
@@ -74,4 +47,5 @@ autoload -U promptinit
 promptinit
 prompt clint
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+autoload -Uz compinit
+compinit
