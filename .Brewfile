@@ -28,6 +28,8 @@ brew "jc"
 brew "jj"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Input filter for the pager less
+brew "lesspipe"
 # Music engraving system
 brew "lilypond"
 # Mac App Store command-line interface
