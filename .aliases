@@ -12,8 +12,3 @@ SunOS)
     ;;
 esac
 
-alias bi='bundle install --local'
-alias m='mutt'
-alias make_bin_safe='mkdir -p .git/safe'
-alias make_bin_unsafe='rm -r .git/safe'
-
