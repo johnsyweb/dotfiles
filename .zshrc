@@ -49,3 +49,4 @@ prompt clint
 
 autoload -Uz compinit
 compinit
+eval "$(/opt/homebrew/bin/zsh-patina activate)"

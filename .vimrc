@@ -197,12 +197,6 @@ let g:rbpt_loadcmd_toggle = 0
 let g:dbext_suppress_version_warning = 1
 call pathogen#infect()
 
-try
-    colorscheme solarized
-catch
-    colorscheme desert
-endtry
-
 syntax match Italic /\<paj\>/
 syntax match Smiley /[8:;][-*o][(){}\[\]\/\\|p]/
 
